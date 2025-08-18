@@ -35,7 +35,7 @@ app.use(compression())
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// --- Static assets avec CORS et COEP ---
+// --- Static assets avec CORS, COEP et Cache (RGESN 3.1) ---
 app.use(
   '/static',
   (req, res, next) => {
@@ -43,11 +43,22 @@ app.use(
     res.set('Cross-Origin-Resource-Policy', 'cross-origin')
     res.set('Cross-Origin-Opener-Policy', 'same-origin')
     res.set('Cross-Origin-Embedder-Policy', 'require-corp')
+    
+    // Cache headers based on file type (RGESN 3.1)
+    const ext = path.extname(req.path).toLowerCase()
+    if (ext === '.webp' || ext === '.jpg' || ext === '.png') {
+      res.set('Cache-Control', 'public, max-age=86400') // 1 day for images
+    } else if (ext === '.css' || ext === '.js') {
+      res.set('Cache-Control', 'public, max-age=3600') // 1 hour for CSS/JS
+    } else {
+      res.set('Cache-Control', 'public, max-age=300') // 5 minutes for others
+    }
+    
     next()
   },
   express.static(path.join(__dirname, 'static'), {
     extensions: ['js', 'css', 'jpg', 'webp'],
-    maxAge: 0
+    maxAge: '1d'  // Cache for 1 day (RGESN 3.1)
   })
 )
 
@@ -64,6 +75,9 @@ app.get('/api/server', (_, res) => {
 
 // --- Optimized image route (RGESN 2.1) ---
 app.get('/static/large', (req, res) => {
+  // Cache headers for optimized images (RGESN 3.1)
+  res.set('Cache-Control', 'public, max-age=86400') // 1 day
+  
   const acceptHeader = req.headers.accept || ''
   if (acceptHeader.includes('image/webp')) {
     res.sendFile(path.join(__dirname, 'static', 'large.webp'))
