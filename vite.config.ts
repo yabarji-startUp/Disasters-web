@@ -26,7 +26,10 @@ export default defineConfig({
       }
     },
     // Analyse du bundle
-    sourcemap: false
+    sourcemap: false,
+    // Optimisation CSS (RGESN 1.3)
+    cssCodeSplit: true,
+    cssMinify: true
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],
