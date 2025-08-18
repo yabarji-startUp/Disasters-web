@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import {
   Activity,
   Cpu,
@@ -13,8 +13,10 @@ import {
   Image,
   Cloud
 } from 'lucide-react'
-import * as THREE from 'three'
-import _ from 'lodash'
+import StatsCard from './components/StatsCard'
+
+// Lazy loading pour Three.js (RGESN 1.2)
+const ThreeScene = lazy(() => import('./components/ThreeScene'))
 
 type Stat = {
   bundle: number
@@ -71,61 +73,10 @@ export default function App() {
   })
   const [ready, setReady] = useState(false)
 
-  const canvasRef = useRef<HTMLCanvasElement>(null)
   const injectedRef = useRef(false)
   const intervalRef = useRef<number>()
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1_000)
-    camera.position.z = 30
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
-    renderer.setSize(canvas.clientWidth || 640, canvas.clientHeight || 480)
-    renderer.setPixelRatio(window.devicePixelRatio)
-    const ambient = new THREE.AmbientLight(0xffffff, 0.3)
-    scene.add(ambient)
-    const dir = new THREE.DirectionalLight(0xffffff, 0.8)
-    dir.position.set(25, 25, 25)
-    scene.add(dir)
-    for (let i = 0; i < 20; i++) {
-      const mat = new THREE.MeshPhongMaterial({ color: Math.random() * 0xffffff, shininess: 80 })
-      const geo = new THREE.BoxGeometry(1 + Math.random(), 1 + Math.random(), 1 + Math.random())
-      const cube = new THREE.Mesh(geo, mat)
-      cube.position.set((Math.random() - 0.5) * 50, (Math.random() - 0.5) * 50, (Math.random() - 0.5) * 50)
-      scene.add(cube)
-    }
-    const animate = () => {
-      let i = 0
-      scene.traverse((o: any) => {
-        if (o.isMesh) {
-          o.rotation.x += 0.002 * ((i % 3) + 1)
-          o.rotation.y += 0.003 * ((i % 4) + 1)
-        }
-        i++
-      })
-      renderer.render(scene, camera)
-      requestAnimationFrame(animate)
-    }
-    animate()
-    const onResize = _.throttle(() => {
-      camera.aspect = canvas.clientWidth / canvas.clientHeight
-      camera.updateProjectionMatrix()
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight)
-    }, 200)
-    window.addEventListener('resize', onResize)
-    return () => {
-      window.removeEventListener('resize', onResize)
-      renderer.dispose()
-      scene.traverse((o: any) => {
-        if (o.geometry) o.geometry.dispose()
-        if (o.material) {
-          Array.isArray(o.material) ? o.material.forEach((m: any) => m.dispose()) : o.material.dispose()
-        }
-      })
-    }
-  }, [])
+  // Three.js logic moved to separate component with lazy loading
 
   useEffect(() => {
     if (injectedRef.current) return
@@ -141,9 +92,11 @@ export default function App() {
       script.crossOrigin = 'anonymous'
       h.appendChild(script)
     }
-    document.readyState === 'complete'
-      ? loadAssets()
-      : window.addEventListener('load', loadAssets, { once: true })
+    if (document.readyState === 'complete') {
+      loadAssets()
+    } else {
+      window.addEventListener('load', loadAssets, { once: true })
+    }
   }, [])
 
   useEffect(() => {
@@ -266,18 +219,18 @@ export default function App() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">Plateforme d'entraînement avancée pour l'optimisation web et l'éco-conception</p>
         </header>
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
-          <Card icon={<Database className="w-8 h-8 text-purple-400" />} title="Poids HTML" value={`${(stats.bundle / 1_024).toFixed(0)} kB`} tone={color(stats.bundle, limits.weight)} tip="transferSize du document" />
-          <Card icon={<Globe className="w-8 h-8 text-blue-400" />} title="Poids page" value={`${(stats.weight / 1_024).toFixed(0)} kB`} tone={color(stats.weight, limits.weight)} tip="somme transferSize" />
-          <Card icon={<Layers className="w-8 h-8 text-teal-400" />} title="DOM" value={stats.dom} tone={color(stats.dom, limits.dom)} tip="nombre de nœuds" />
-          <Card icon={<Activity className="w-8 h-8 text-green-400" />} title="Ressources" value={stats.resources} tone={color(stats.resources, limits.resources)} tip="entries PerformanceResourceTiming" />
-          <Card icon={<FileText className="w-8 h-8 text-fuchsia-400" />} title="JS" value={`${(stats.js / 1_024).toFixed(0)} kB`} tone={color(stats.js, limits.js)} />
-          <Card icon={<FilePlus className="w-8 h-8 text-sky-400" />} title="CSS" value={`${(stats.img / 1024).toFixed(1)} kB`} tone={color(stats.css, limits.css)} />
-          <Card icon={<Image className="w-8 h-8 text-amber-400" />} title="Images" value={`${(stats.img / 1_024).toFixed(0)} kB`} tone={color(stats.img, limits.img)} />
-          <Card icon={<Cloud className="w-8 h-8 text-emerald-400" />} title="Cache hit" value={`${Math.round(stats.cache * 100)} %`} tone={color(stats.cache, limits.cache, true)} />
-          <Card icon={<MemoryStick className="w-8 h-8 text-red-400" />} title="RAM serveur" value={`${stats.memory} MB`} tone="bg-white/10 border-white/20" />
-          <Card icon={<Cpu className="w-8 h-8 text-indigo-400" />} title="CPU" value={stats.load} tone="bg-white/10 border-white/20" />
-          <Card icon={<Activity className="w-8 h-8 text-lime-400" />} title="RPS" value={stats.rps} tone="bg-white/10 border-white/20" />
-          <Card icon={<Timer className="w-8 h-8 text-yellow-400" />} title="Load page" value={`${stats.pl} ms`} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={Database} title="Poids HTML" value={`${(stats.bundle / 1_024).toFixed(0)} kB`} tone={color(stats.bundle, limits.weight)} tip="transferSize du document" />
+          <StatsCard icon={Globe} title="Poids page" value={`${(stats.weight / 1_024).toFixed(0)} kB`} tone={color(stats.weight, limits.weight)} tip="somme transferSize" />
+          <StatsCard icon={Layers} title="DOM" value={stats.dom} tone={color(stats.dom, limits.dom)} tip="nombre de nœuds" />
+          <StatsCard icon={Activity} title="Ressources" value={stats.resources} tone={color(stats.resources, limits.resources)} tip="entries PerformanceResourceTiming" />
+          <StatsCard icon={FileText} title="JS" value={`${(stats.js / 1_024).toFixed(0)} kB`} tone={color(stats.js, limits.js)} />
+          <StatsCard icon={FilePlus} title="CSS" value={`${(stats.img / 1024).toFixed(1)} kB`} tone={color(stats.css, limits.css)} />
+          <StatsCard icon={Image} title="Images" value={`${(stats.img / 1_024).toFixed(0)} kB`} tone={color(stats.img, limits.img)} />
+          <StatsCard icon={Cloud} title="Cache hit" value={`${Math.round(stats.cache * 100)} %`} tone={color(stats.cache, limits.cache, true)} />
+          <StatsCard icon={MemoryStick} title="RAM serveur" value={`${stats.memory} MB`} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={Cpu} title="CPU" value={stats.load} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={Activity} title="RPS" value={stats.rps} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={Timer} title="Load page" value={`${stats.pl} ms`} tone="bg-white/10 border-white/20" />
         </section>
         <section className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-16">
           <div className="flex items-center gap-4 mb-6">
@@ -285,23 +238,18 @@ export default function App() {
             <h2 className="text-2xl font-bold text-white">Visualisation 3D</h2>
           </div>
           <div className="flex justify-center">
-            <canvas ref={canvasRef} className="rounded-xl border border-white/20 shadow-2xl w-full h-96" />
+            <Suspense fallback={
+              <div className="w-full h-96 flex items-center justify-center">
+                <div className="animate-spin h-12 w-12 rounded-full border-b-2 border-white" />
+              </div>
+            }>
+              <ThreeScene />
+            </Suspense>
           </div>
-          <p className="text-slate-300 text-center mt-4">500 cubes tournants en temps réel</p>
+          <p className="text-slate-300 text-center mt-4">20 cubes tournants en temps réel (lazy loaded)</p>
         </section>
       </div>
     </div>
   )
 }
 
-function Card({ icon, title, value, tone, tip }: { icon: React.ReactNode; title: string; value: string | number; tone: string; tip?: string }) {
-  return (
-    <div className={`backdrop-blur-lg rounded-2xl p-8 border hover:bg-white/15 hover:scale-105 transition ${tone}`} title={tip || ''}>
-      <div className="flex items-center justify-between mb-4">
-        {icon}
-        <span className="text-3xl font-bold text-white">{value}</span>
-      </div>
-      <h3 className="text-lg font-semibold text-white">{title}</h3>
-    </div>
-  )
-}
