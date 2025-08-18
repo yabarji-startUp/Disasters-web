@@ -46,7 +46,7 @@ app.use(
     next()
   },
   express.static(path.join(__dirname, 'static'), {
-    extensions: ['js', 'css', 'jpg'],
+    extensions: ['js', 'css', 'jpg', 'webp'],
     maxAge: 0
   })
 )
@@ -60,6 +60,16 @@ app.get('/api/server', (_, res) => {
     load: +os.loadavg()[0].toFixed(2),
     rps
   })
+})
+
+// --- Optimized image route (RGESN 2.1) ---
+app.get('/static/large', (req, res) => {
+  const acceptHeader = req.headers.accept || ''
+  if (acceptHeader.includes('image/webp')) {
+    res.sendFile(path.join(__dirname, 'static', 'large.webp'))
+  } else {
+    res.sendFile(path.join(__dirname, 'static', 'large.jpg'))
+  }
 })
 
 // --- API payload ---
