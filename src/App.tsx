@@ -60,6 +60,8 @@ const color = (v: number, [g, y]: number[], inv = false) =>
     : 'border-red-500/30 bg-red-500/20'
 
 export default function App() {
+  console.log('App component rendered')
+  
   const [stats, setStats] = useState<Stat>({
     bundle: 0,
     weight: 0,
@@ -184,10 +186,19 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (intervalRef.current) return
+    console.log('useEffect for interval triggered, intervalRef.current:', intervalRef.current)
+    
+    // Nettoyer l'intervalle existant s'il y en a un
+    if (intervalRef.current) {
+      console.log('Cleaning up existing interval:', intervalRef.current)
+      clearInterval(intervalRef.current)
+      intervalRef.current = undefined
+    }
 
+    console.log('Setting up new interval...')
     intervalRef.current = window.setInterval(async () => {
       console.log('Interval triggered at:', new Date().toLocaleTimeString())
+      console.log('Interval ID:', intervalRef.current)
       for (let i = 0; i < 2; i++) {
         fetch(`http://localhost:5001/api/payload?${Date.now()}_${i}`)
       }
@@ -206,7 +217,9 @@ export default function App() {
             load,
             rps
           }
+          console.log('Previous stats:', s)
           console.log('New stats:', newStats)
+          console.log('Memory calculation:', memory, 'bytes =', Math.ceil(memory / 1_048_576), 'MB')
           return newStats
         })
       } catch (err) {
@@ -214,7 +227,10 @@ export default function App() {
       }
     }, 1_000)
 
-    return () => clearInterval(intervalRef.current)
+    return () => {
+      console.log('Cleaning up interval:', intervalRef.current)
+      clearInterval(intervalRef.current)
+    }
   }, [])
 
   if (!ready)

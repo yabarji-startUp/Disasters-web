@@ -94,11 +94,49 @@ app.get('/static/large', (req, res) => {
   }
 })
 
-// --- API payload ---
-app.get('/api/payload', (_, res) => {
-  const block = 'x'.repeat(1_024)
-  const big = Array(1_024).fill(block)
-  res.json({ data: big, ts: Date.now() })
+// --- API payload optimisé (RGESN 4.1) ---
+app.get('/api/payload', (req, res) => {
+  const page = parseInt(req.query.page) || 1
+  const limit = parseInt(req.query.limit) || 100
+  
+  // Données optimisées avec pagination (RGESN 4.1)
+  const optimizedData = Array(limit).fill(null).map((_, i) => ({
+    id: (page - 1) * limit + i + 1,
+    value: Math.random().toString(36).substring(7),
+    timestamp: Date.now()
+  }))
+  
+  res.json({
+    data: optimizedData,
+    pagination: {
+      page,
+      limit,
+      total: 10000, // Total simulé
+      hasMore: page * limit < 10000
+    },
+    ts: Date.now()
+  })
+})
+
+// --- API data optimisée (RGESN 4.1) ---
+app.get('/api/data', (req, res) => {
+  // Cache et compression via middleware Express (RGESN 4.1)
+  res.set('Cache-Control', 'public, max-age=300') // 5 minutes
+  
+  const compressedData = {
+    users: Array(50).fill(null).map((_, i) => ({
+      id: i + 1,
+      name: `User ${i + 1}`,
+      email: `user${i + 1}@example.com`
+    })),
+    metrics: {
+      active: Math.floor(Math.random() * 1000),
+      total: 10000,
+      growth: Math.random() * 0.1
+    }
+  }
+  
+  res.json(compressedData)
 })
 
 app.listen(PORT, () => console.log(`backend on :${PORT}`))
