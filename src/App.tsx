@@ -40,7 +40,10 @@ const limits = {
   js: [153_600, 307_200],
   css: [51_200, 102_400],
   img: [307_200, 716_800],
-  cache: [0.6, 0.4]
+  cache: [0.6, 0.4],
+  memory: [100, 200], // MB
+  load: [50, 80], // %
+  rps: [10, 20] // requests per second
 }
 
 const color = (v: number, [g, y]: number[], inv = false) =>
@@ -81,6 +84,17 @@ export default function App() {
   useEffect(() => {
     if (injectedRef.current) return
     injectedRef.current = true
+    
+    // Désactiver le Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (const registration of registrations) {
+          registration.unregister()
+          console.log('Service Worker désactivé')
+        }
+      })
+    }
+    
     const loadAssets = () => {
       const h = document.head
       const link = document.createElement('link')
@@ -173,6 +187,7 @@ export default function App() {
     if (intervalRef.current) return
 
     intervalRef.current = window.setInterval(async () => {
+      console.log('Interval triggered at:', new Date().toLocaleTimeString())
       for (let i = 0; i < 2; i++) {
         fetch(`http://localhost:5001/api/payload?${Date.now()}_${i}`)
       }
@@ -182,12 +197,18 @@ export default function App() {
           cache: 'no-store'
         }).then(r => r.json())
 
-        setStats(s => ({
-          ...s,
-          memory: Math.ceil(memory / 1_048_576),
-          load,
-          rps
-        }))
+        console.log('API Response:', { memory, load, rps })
+
+        setStats(s => {
+          const newStats = {
+            ...s,
+            memory: Math.ceil(memory / 1_048_576),
+            load,
+            rps
+          }
+          console.log('New stats:', newStats)
+          return newStats
+        })
       } catch (err) {
         console.warn('Erreur lors du fetch des stats serveur', err)
       }
@@ -227,9 +248,9 @@ export default function App() {
           <StatsCard icon={FilePlus} title="CSS" value={`${(stats.img / 1024).toFixed(1)} kB`} tone={color(stats.css, limits.css)} />
           <StatsCard icon={Image} title="Images" value={`${(stats.img / 1_024).toFixed(0)} kB`} tone={color(stats.img, limits.img)} />
           <StatsCard icon={Cloud} title="Cache hit" value={`${Math.round(stats.cache * 100)} %`} tone={color(stats.cache, limits.cache, true)} />
-          <StatsCard icon={MemoryStick} title="RAM serveur" value={`${stats.memory} MB`} tone="bg-white/10 border-white/20" />
-          <StatsCard icon={Cpu} title="CPU" value={stats.load} tone="bg-white/10 border-white/20" />
-          <StatsCard icon={Activity} title="RPS" value={stats.rps} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={MemoryStick} title="RAM serveur" value={`${stats.memory} MB`} tone={color(stats.memory, limits.memory)} />
+          <StatsCard icon={Cpu} title="CPU" value={stats.load} tone={color(stats.load, limits.load)} />
+          <StatsCard icon={Activity} title="RPS" value={stats.rps} tone={color(stats.rps, limits.rps)} />
           <StatsCard icon={Timer} title="Load page" value={`${stats.pl} ms`} tone="bg-white/10 border-white/20" />
         </section>
         <section className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-16">

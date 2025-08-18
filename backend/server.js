@@ -30,6 +30,14 @@ app.use((_, res, next) => {
 
 app.use(helmet({ contentSecurityPolicy: false }))
 app.use(cors())
+
+// Middleware pour API cross-origin (RGESN 4.1)
+app.use('/api', (req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*')
+  res.set('Cross-Origin-Resource-Policy', 'cross-origin')
+  next()
+})
+
 app.use(compression())
 
 const __filename = fileURLToPath(import.meta.url)
