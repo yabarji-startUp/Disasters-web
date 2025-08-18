@@ -246,7 +246,7 @@ export default function App() {
               <ThreeScene />
             </Suspense>
           </div>
-          <p className="text-slate-300 text-center mt-4">20 cubes tournants en temps réel (lazy loaded)</p>
+          <p className="text-slate-300 text-center mt-4">8 cubes optimisés en temps réel (RGESN 2.2)</p>
         </section>
       </div>
     </div>

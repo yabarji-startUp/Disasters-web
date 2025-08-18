@@ -13,9 +13,14 @@ export default function ThreeScene() {
     const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1_000)
     camera.position.z = 30
 
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true })
+    // Optimisation RGESN 2.2 : Réduction de la charge GPU
+    const renderer = new THREE.WebGLRenderer({ 
+      canvas, 
+      antialias: false, // Désactiver l'antialiasing pour performance
+      powerPreference: "high-performance"
+    })
     renderer.setSize(canvas.clientWidth || 640, canvas.clientHeight || 480)
-    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)) // Limiter le pixel ratio
 
     const ambient = new THREE.AmbientLight(0xffffff, 0.3)
     scene.add(ambient)
@@ -24,36 +29,56 @@ export default function ThreeScene() {
     dir.position.set(25, 25, 25)
     scene.add(dir)
 
-    // Création des cubes avec optimisations
+    // Optimisation RGESN 2.2 : Réduction du nombre d'objets et partage des ressources
     const cubes: THREE.Mesh[] = []
-    for (let i = 0; i < 20; i++) {
-      const mat = new THREE.MeshPhongMaterial({ 
-        color: Math.random() * 0xffffff, 
-        shininess: 80 
-      })
-      const geo = new THREE.BoxGeometry(
-        1 + Math.random(), 
-        1 + Math.random(), 
-        1 + Math.random()
-      )
-      const cube = new THREE.Mesh(geo, mat)
+    
+    // Géométrie partagée pour tous les cubes
+    const sharedGeometry = new THREE.BoxGeometry(1, 1, 1)
+    
+    // Matériaux partagés (3 couleurs différentes)
+    const materials = [
+      new THREE.MeshPhongMaterial({ color: 0x4f46e5, shininess: 50 }), // Indigo
+      new THREE.MeshPhongMaterial({ color: 0x7c3aed, shininess: 50 }), // Violet
+      new THREE.MeshPhongMaterial({ color: 0xec4899, shininess: 50 })  // Pink
+    ]
+    
+    // Réduction de 20 à 8 cubes pour performance
+    for (let i = 0; i < 8; i++) {
+      const material = materials[i % materials.length]
+      const cube = new THREE.Mesh(sharedGeometry, material)
+      
+      // Positionnement optimisé
       cube.position.set(
-        (Math.random() - 0.5) * 50, 
-        (Math.random() - 0.5) * 50, 
-        (Math.random() - 0.5) * 50
+        (Math.random() - 0.5) * 30, // Réduire l'espacement
+        (Math.random() - 0.5) * 30,
+        (Math.random() - 0.5) * 30
       )
+      
+      // Échelle aléatoire pour variété
+      const scale = 0.5 + Math.random() * 1.5
+      cube.scale.set(scale, scale, scale)
+      
       scene.add(cube)
       cubes.push(cube)
     }
 
+    // Optimisation RGESN 2.2 : Animation plus efficace
+    let frameCount = 0
     const animate = () => {
-      // Animation optimisée
+      frameCount++
+      
+      // Animation optimisée avec moins de calculs
       cubes.forEach((cube, i) => {
-        cube.rotation.x += 0.002 * ((i % 3) + 1)
-        cube.rotation.y += 0.003 * ((i % 4) + 1)
+        const speed = 0.01 + (i * 0.005)
+        cube.rotation.x += speed
+        cube.rotation.y += speed * 0.7
       })
       
-      renderer.render(scene, camera)
+      // Rendu conditionnel pour économiser les ressources
+      if (frameCount % 2 === 0) { // Rendu à 30 FPS au lieu de 60
+        renderer.render(scene, camera)
+      }
+      
       requestAnimationFrame(animate)
     }
     animate()
@@ -70,17 +95,10 @@ export default function ThreeScene() {
       window.removeEventListener('resize', onResize)
       renderer.dispose()
       
-      // Nettoyage optimisé
-      cubes.forEach(cube => {
-        if (cube.geometry) cube.geometry.dispose()
-        if (cube.material) {
-          if (Array.isArray(cube.material)) {
-            cube.material.forEach((m: THREE.Material) => m.dispose())
-          } else {
-            cube.material.dispose()
-          }
-        }
-      })
+      // Nettoyage optimisé RGESN 2.2
+      sharedGeometry.dispose()
+      materials.forEach(material => material.dispose())
+      // Les cubes partagent la géométrie et les matériaux, pas besoin de les disposer individuellement
     }
   }, [])
 
