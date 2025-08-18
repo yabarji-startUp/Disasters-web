@@ -1,3 +1,6 @@
+# Personal Documents
+.yassen/
+
 # Dependencies
 node_modules/
 npm-debug.log*
