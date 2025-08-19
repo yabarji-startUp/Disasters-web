@@ -17,7 +17,7 @@ export default function StatsCard({ icon: Icon, title, value, tone, tip }: Stats
     >
       <div className="flex items-center justify-between mb-4">
         <Icon className="w-8 h-8" />
-        <span className="text-3xl font-bold text-white">{value}</span>
+        <span className="text-3xl font-bold text-white truncate max-w-[120px]" title={String(value)}>{value}</span>
       </div>
       <h3 className="text-lg font-semibold text-white">{title}</h3>
     </div>

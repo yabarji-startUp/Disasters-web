@@ -314,7 +314,7 @@ export default function App() {
           <StatsCard icon={MemoryStick} title="RAM serveur" value={`${stats.memory} MB`} tone={color(stats.memory, limits.memory)} />
           <StatsCard icon={Cpu} title="CPU" value={stats.load} tone={color(stats.load, limits.load)} />
           <StatsCard icon={Activity} title="RPS" value={stats.rps} tone={color(stats.rps, limits.rps)} />
-          <StatsCard icon={Timer} title="Load page" value={`${stats.pl} ms`} tone="bg-white/10 border-white/20" />
+          <StatsCard icon={Timer} title="Load page" value={`${stats.pl > 1000 ? (stats.pl / 1000).toFixed(1) + 's' : Math.round(stats.pl) + 'ms'}`} tone="bg-white/10 border-white/20" />
         </section>
         <section className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-16">
           <div className="flex items-center gap-4 mb-6">
