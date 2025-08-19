@@ -8,6 +8,57 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 
 ---
 
+## 🏗️ Architecture du Dossier UF_Zoom
+
+### 📁 Structure Complète
+
+```
+UF_Zoom/
+├── 📄 README.md                          # Ce fichier - Vue d'ensemble du projet
+├── 📄 01-cartographie-contraintes-projet.md  # Analyse des contraintes
+├── 📄 02-slides-plan-action-6mois.md    # Présentation principale
+├── 📄 03-analyse-ecoindex.xlsx          # Données d'analyse EcoIndex
+├── 📄 04-lien-depot-git.md              # Documentation du dépôt Git
+├── 📄 05-backlog.md                     # Backlog avec user stories
+├── 🛠️ generate-slide.sh                 # Script de génération des présentations
+└── 📁 output/                           # Dossier de sortie des présentations
+    ├── 📄 02-slides-plan-action-6mois.html
+    ├── 📄 02-slides-plan-action-6mois.pdf
+    └── 📄 02-slides-plan-action-6mois.pptx
+```
+
+### 🎨 Thème et Style
+
+**Thème Marp :** `yas-eco-red.css` (localisé dans `../Themes/`)
+- **Style :** Éco-responsable avec couleurs rouge/vert
+- **Classes CSS :** `two-columns`, `metric`, `timeline`, `chart-container`, `quote-highlight`, `objective`, `result`
+
+### 🚀 Workflow d'Utilisation
+
+#### **Génération des Présentations**
+```bash
+# Dans le dossier UF_Zoom
+chmod +x generate-slide.sh
+./generate-slide.sh
+
+# Résultat : 3 fichiers dans output/
+# - 02-slides-plan-action-6mois.html
+# - 02-slides-plan-action-6mois.pdf
+# - 02-slides-plan-action-6mois.pptx
+```
+
+#### **Modification des Slides**
+1. Éditer `02-slides-plan-action-6mois.md`
+2. Exécuter `./generate-slide.sh`
+3. Vérifier le résultat dans `output/`
+
+#### **Gestion du Projet**
+1. Consulter `05-backlog.md` pour les tâches
+2. Utiliser `04-lien-depot-git.md` pour Git
+3. Analyser `03-analyse-ecoindex.xlsx` pour les métriques
+
+---
+
 ## 📁 Structure des Livrables
 
 ### 1. **Cartographie des Contraintes Projet**
@@ -44,7 +95,7 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - Recommandations d'optimisation
 
 ### 4. **Backlog avec User Stories**
-📄 `04-backlog.md`
+📄 `05-backlog.md`
 
 **Contenu :**
 - 5 User Stories détaillées (minimum 3 requis)
@@ -59,7 +110,7 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - KPIs globaux du backlog
 
 ### 5. **Lien vers le Dépôt Git**
-📄 `05-lien-depot-git.md`
+📄 `04-lien-depot-git.md`
 
 **Contenu :**
 - URL du dépôt GitHub
@@ -155,6 +206,38 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - ✅ Rédaction User Stories
 - ✅ Présentation orale
 - ✅ Application des bonnes pratiques RGESN
+
+---
+
+## 🔗 Dépendances Externes
+
+### Thèmes Marp
+- **`yas-eco-red.css`** : Thème personnalisé éco-responsable
+- **Localisation :** `../Themes/`
+
+### Outils Requis
+- **Marp CLI :** Génération des présentations
+- **Git :** Versioning et collaboration
+- **Node.js :** Environnement de développement
+
+---
+
+## 🎯 Bonnes Pratiques
+
+### Organisation
+- **Numérotation cohérente** des fichiers
+- **Noms explicites** et descriptifs
+- **Séparation claire** des responsabilités
+
+### Documentation
+- **Commentaires détaillés** dans les scripts
+- **README à jour** pour chaque fichier
+- **Architecture documentée** (ce fichier)
+
+### Versioning
+- **Commits atomiques** et descriptifs
+- **Branches organisées** selon GitFlow
+- **Tags pour les versions** importantes
 
 ---
 

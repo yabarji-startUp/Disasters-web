@@ -171,7 +171,7 @@ export default function App() {
       const loadTime = Math.round(performance.now() - startTime);
       const domContentLoaded = nav.domContentLoadedEventEnd - nav.domContentLoadedEventStart;
       const loadEvent = nav.loadEventEnd - nav.loadEventStart;
-      
+
       setStats(s => ({
         ...s,
         bundle: nav.transferSize,
@@ -254,10 +254,10 @@ export default function App() {
 
         setStats(s => {
           const newStats = {
-            ...s,
-            memory: Math.ceil(memory / 1_048_576),
-            load,
-            rps
+          ...s,
+          memory: Math.ceil(memory / 1_048_576),
+          load,
+          rps
           }
           console.log('Previous stats:', s)
           console.log('New stats:', newStats)

@@ -18,7 +18,7 @@
     "test": "echo \"Tests not configured\"",
     "eco:analyze": "node analyse-ecoperformance.js",
     "eco:build": "npm run clean && npm run build && npm run eco:analyze"
-  },
+    },
   "dependencies": {
     "@types/three": "^0.162.0",
     "compression": "^1.7.4",
