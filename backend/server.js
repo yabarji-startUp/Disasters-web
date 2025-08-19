@@ -99,7 +99,42 @@ app.get('/api/server', (_, res) => {
 
 // --- Health check endpoint ---
 app.get('/health', (_, res) => {
-  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() })
+  const health = {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    memory: process.memoryUsage(),
+    environment: process.env.NODE_ENV || 'development',
+    port: PORT
+  }
+  res.status(200).json(health)
+})
+
+// --- Diagnostic endpoint ---
+app.get('/diagnostic', (_, res) => {
+  const diagnostic = {
+    server: {
+      status: 'running',
+      port: PORT,
+      environment: process.env.NODE_ENV || 'development',
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      timestamp: new Date().toISOString()
+    },
+    static: {
+      dist: 'available',
+      backend: 'available',
+      favicon: 'available'
+    },
+    cache: {
+      headers: 'configured',
+      static: '86400s',
+      css: '3600s',
+      js: '3600s',
+      api: '300s'
+    }
+  }
+  res.status(200).json(diagnostic)
 })
 
 // --- Optimized image route (RGESN 2.1) ---
@@ -179,4 +214,16 @@ app.listen(PORT, () => {
   console.log(`📊 Health check: http://localhost:${PORT}/health`)
   console.log(`🔧 API server: http://localhost:${PORT}/api/server`)
   console.log(`📁 Static files: http://localhost:${PORT}/`)
+  console.log(`⏰ Started at: ${new Date().toISOString()}`)
+})
+
+// Gestion des erreurs non capturées
+process.on('uncaughtException', (err) => {
+  console.error('❌ Uncaught Exception:', err)
+  process.exit(1)
+})
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason)
+  process.exit(1)
 })

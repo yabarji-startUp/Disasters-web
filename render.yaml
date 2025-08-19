@@ -11,4 +11,11 @@ services:
       - key: PORT
         value: 10000
     healthCheckPath: /health
-    autoDeploy: false  # Contrôlé par GitHub Actions 
+    autoDeploy: false  # Contrôlé par GitHub Actions
+    buildFilter:
+      paths:
+        - src/**
+        - backend/**
+        - package.json
+        - package-lock.json
+        - render.yaml 
