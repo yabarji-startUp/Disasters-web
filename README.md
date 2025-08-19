@@ -92,34 +92,95 @@ Un dashboard de visualisation de données sur les catastrophes naturelles, optim
 ### 🎯 Étude Théorique
 Analyse complète d'éco-conception pour une application Zoom avec préconisations détaillées.
 
+### 🏗️ Architecture du Dossier UF_Zoom
+
+#### 📁 Structure Complète
+
+```
+UF_Zoom/
+├── 📄 README.md                          # Vue d'ensemble du projet
+├── 📄 01-cartographie-contraintes-projet.md  # Analyse des contraintes
+├── 📄 02-slides-plan-action-6mois.md    # Présentation principale
+├── 📄 03-analyse-ecoindex.xlsx          # Données d'analyse EcoIndex
+├── 📄 04-lien-depot-git.md              # Documentation du dépôt Git
+├── 📄 05-backlog.md                     # Backlog avec user stories
+├── 🛠️ generate-slide.sh                 # Script de génération des présentations
+└── 📁 output/                           # Dossier de sortie des présentations
+    ├── 📄 02-slides-plan-action-6mois.html
+    ├── 📄 02-slides-plan-action-6mois.pdf
+    └── 📄 02-slides-plan-action-6mois.pptx
+```
+
+#### 🎨 Thème et Style
+
+**Thème Marp :** `yas-eco-red.css` (localisé dans `../Themes/`)
+- **Style :** Éco-responsable avec couleurs rouge/vert
+- **Classes CSS :** `two-columns`, `metric`, `timeline`, `chart-container`, `quote-highlight`, `objective`, `result`
+
+#### 🚀 Workflow d'Utilisation
+
+**Génération des Présentations**
+```bash
+# Dans le dossier UF_Zoom
+chmod +x generate-slide.sh
+./generate-slide.sh
+
+# Résultat : 3 fichiers dans output/
+# - 02-slides-plan-action-6mois.html
+# - 02-slides-plan-action-6mois.pdf
+# - 02-slides-plan-action-6mois.pptx
+```
+
+**Modification des Slides**
+1. Éditer `02-slides-plan-action-6mois.md`
+2. Exécuter `./generate-slide.sh`
+3. Vérifier le résultat dans `output/`
+
+**Gestion du Projet**
+1. Consulter `05-backlog.md` pour les tâches
+2. Utiliser `04-lien-depot-git.md` pour Git
+3. Analyser `03-analyse-ecoindex.xlsx` pour les métriques
+
 ### 📁 Livrables Créés
 
-#### 1. **Cartographie des Contraintes** (`UF_Zoom/01-cartographie-contraintes-ameliorée.md`)
+#### 1. **Cartographie des Contraintes** (`01-cartographie-contraintes-projet.md`)
 - **Contraintes techniques :** WebRTC, performance, sécurité
 - **Contraintes budgétaires :** 1.2M€ - 1.8M€/an
 - **Contraintes temporelles :** Planning 12 mois
 - **Contraintes environnementales :** Objectif -30% carbone vs Zoom
 - **Plan d'action éco-conception :** 3 BP RGESN, 2 objectifs chiffrés
 
-#### 2. **Roadmap Éco-conception Complète** (`UF_Zoom/02-roadmap-eco-conception-complete.md`)
-- **9 équipes spécialisées** (5 Development + 4 Marketing)
+#### 2. **Slides de Plan d'Action sur 6 Mois** (`02-slides-plan-action-6mois.md`)
+- **Objectifs globaux** avec KPIs environnementaux et techniques
 - **Roadmap détaillée** mois par mois
-- **Actions prioritaires** et KPIs par équipe
-- **Budget de 340k€** réparti sur 6 mois
-- **Coordination** Development & Marketing
+- **Actions prioritaires** par période
+- **KPIs mensuels** et ressources nécessaires
+- **Budget total de 340k€** réparti sur 6 mois
+- **Processus de suivi** et reporting
 
-#### 3. **Backlog User Stories** (`UF_Zoom/03-backlog-user-stories.md`)
+#### 3. **Fichier Excel d'Analyse EcoIndex** (`03-analyse-ecoindex.xlsx`)
+- **Analyse détaillée** des métriques EcoIndex
+- **Comparaison** avec les standards RGESN
+- **KPIs environnementaux** mesurables
+- **Recommandations** d'optimisation
+
+#### 4. **Backlog avec User Stories** (`05-backlog.md`)
 - **5 User Stories** détaillées avec :
   - Contexte "En tant que... je veux... afin de..."
   - Objectifs qualitatifs et chiffrés
   - Bonnes pratiques RGESN ciblées
   - KPIs environnementaux associés
+  - Critères d'acceptation
+  - Estimation effort
+- **Planning des sprints**
+- **KPIs globaux** du backlog
 
-#### 4. **Slides de Présentation** (`UF_Zoom/04-slides-presentation.md`)
-- **16 slides** pour présentation orale
-- **Format Marp** avec thème personnalisé
-- **Roadmap visuelle** et métriques
-- **Avantages concurrentiels** éco-responsables
+#### 5. **Lien vers le Dépôt Git** (`04-lien-depot-git.md`)
+- **URL du dépôt** GitHub
+- **Structure et organisation**
+- **Métriques de développement**
+- **Optimisations éco-conception** appliquées
+- **Documentation associée**
 
 ### 🎯 KPIs Définis
 
@@ -134,6 +195,11 @@ Analyse complète d'éco-conception pour une application Zoom avec préconisatio
 - **Qualité vidéo :** Adaptative 360p-1080p
 - **Concurrence :** 100+ participants
 - **Disponibilité :** 99.9%
+
+#### Business
+- **Budget total :** 340k€ sur 6 mois
+- **Équipe :** 9 équipes spécialisées
+- **ROI environnemental :** Mesurable et impactant
 
 ---
 
@@ -257,12 +323,53 @@ Analyse complète d'éco-conception pour une application Zoom avec préconisatio
 
 ---
 
+## 🔗 Dépendances Externes
+
+### Thèmes Marp
+- **`yas-eco-red.css`** : Thème personnalisé éco-responsable
+- **Localisation :** `Themes/`
+
+### Outils Requis
+- **Marp CLI :** Génération des présentations
+- **Git :** Versioning et collaboration
+- **Node.js :** Environnement de développement
+
+---
+
+## 🎯 Bonnes Pratiques
+
+### Organisation
+- **Numérotation cohérente** des fichiers
+- **Noms explicites** et descriptifs
+- **Séparation claire** des responsabilités
+
+### Documentation
+- **Commentaires détaillés** dans les scripts
+- **README à jour** pour chaque fichier
+- **Architecture documentée** (ce fichier)
+
+### Versioning
+- **Commits atomiques** et descriptifs
+- **Branches organisées** selon GitFlow
+- **Tags pour les versions** importantes
+
+---
+
 ## 📞 Contact et Ressources
 
 ### Documentation
 - **Dashboard :** Code source dans `/src/`
 - **Préconisations :** Dossier `/UF_Zoom/`
 - **Optimisations :** Dossier `.yassen/`
+
+### 📊 Présentations Disponibles
+
+#### 🎯 Plan d'Action 6 Mois - Application Zoom
+- **📄 HTML :** [02-slides-plan-action-6mois.html](UF_Zoom/output/02-slides-plan-action-6mois.html) *(169 KB)*
+- **📄 PDF :** [02-slides-plan-action-6mois.pdf](UF_Zoom/output/02-slides-plan-action-6mois.pdf) *(1.0 MB)*
+- **📄 PowerPoint :** [02-slides-plan-action-6mois.pptx](UF_Zoom/output/02-slides-plan-action-6mois.pptx) *(13.2 MB)*
+
+> 💡 **Conseil :** Ouvrez le fichier HTML dans votre navigateur pour une présentation interactive avec le thème éco-responsable.
 
 ### Outils Utilisés
 - **EcoIndex :** https://www.ecoindex.fr/
@@ -284,12 +391,17 @@ disasters-web/
 ├── backend/                      # Serveur Express
 ├── data/                         # Données optimisées
 ├── .yassen/                      # Documentation optimisations
+├── Themes/                       # Thèmes Marp
+│   └── yas-eco-red.css          # Thème éco-responsable
 └── UF_Zoom/                      # Préconisations Application Zoom
-    ├── 01-cartographie-contraintes-ameliorée.md
-    ├── 02-roadmap-eco-conception-complete.md
-    ├── 03-backlog-user-stories.md
-    ├── 04-slides-presentation.md
-    └── README.md
+    ├── README.md                 # Vue d'ensemble du projet
+    ├── 01-cartographie-contraintes-projet.md
+    ├── 02-slides-plan-action-6mois.md
+    ├── 03-analyse-ecoindex.xlsx
+    ├── 04-lien-depot-git.md
+    ├── 05-backlog.md
+    ├── generate-slide.sh         # Script de génération
+    └── output/                   # Fichiers de sortie
 ```
 
 ---

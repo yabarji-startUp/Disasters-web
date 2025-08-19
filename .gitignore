@@ -1,6 +1,9 @@
 # Personal Documents
 .yassen/
 
+# Presentation Notes (Speaker Notes)
+UF_Zoom/notes-orateur-*.md
+
 # Dependencies
 node_modules/
 npm-debug.log*
