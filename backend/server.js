@@ -70,6 +70,19 @@ app.use(
   })
 )
 
+// --- Frontend static files (production build) ---
+app.use(express.static(path.join(__dirname, '..', 'dist'), {
+  maxAge: '1h', // Cache for 1 hour
+  setHeaders: (res, path) => {
+    // Cache headers for frontend assets
+    if (path.endsWith('.js') || path.endsWith('.css')) {
+      res.set('Cache-Control', 'public, max-age=3600') // 1 hour
+    } else if (path.endsWith('.html')) {
+      res.set('Cache-Control', 'no-cache') // No cache for HTML
+    }
+  }
+}))
+
 // --- API server ---
 app.get('/api/server', (_, res) => {
   res.set('Cache-Control', 'no-store')
@@ -137,6 +150,17 @@ app.get('/api/data', (req, res) => {
   }
   
   res.json(compressedData)
+})
+
+// --- SPA fallback route (serve index.html for all non-API routes) ---
+app.get('*', (req, res) => {
+  // Skip API routes
+  if (req.path.startsWith('/api')) {
+    return res.status(404).json({ error: 'API endpoint not found' })
+  }
+  
+  // Serve index.html for all other routes (SPA routing)
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
 })
 
 app.listen(PORT, () => console.log(`backend on :${PORT}`))
