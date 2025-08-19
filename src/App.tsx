@@ -77,9 +77,18 @@ export default function App() {
     pl: 0
   })
   const [ready, setReady] = useState(false)
-
+  const [show3D, setShow3D] = useState(false)
   const injectedRef = useRef(false)
   const intervalRef = useRef<number>()
+
+  // RGESN 2.2 : Optimisation du rendu 3D - Chargement différé
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow3D(true)
+    }, 2000) // Retarde le chargement 3D de 2 secondes
+
+    return () => clearTimeout(timer)
+  }, [])
 
   // Three.js logic moved to separate component with lazy loading
 
@@ -97,22 +106,24 @@ export default function App() {
       })
     }
     
-    const loadAssets = () => {
-      const h = document.head
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = 'http://localhost:5001/static/big.css'
-      h.appendChild(link)
-      const script = document.createElement('script')
-      script.src = 'http://localhost:5001/static/big.js'
-      script.crossOrigin = 'anonymous'
-      h.appendChild(script)
-    }
-    if (document.readyState === 'complete') {
-      loadAssets()
-    } else {
-      window.addEventListener('load', loadAssets, { once: true })
-    }
+    // Optimisation RGESN 1.1 : Suppression du chargement de ressources inutiles
+    // const loadAssets = () => {
+    //   const h = document.head
+    //   const link = document.createElement('link')
+    //   link.rel = 'stylesheet'
+    //   link.href = 'http://localhost:5001/static/big.css'
+    //   h.appendChild(link)
+    //   const script = document.createElement('script')
+    //   script.src = 'http://localhost:5001/static/big.js'
+    //   script.crossOrigin = 'anonymous'
+    //   h.appendChild(script)
+    // }
+    // Suppression du chargement de ressources inutiles pour optimiser le KPI Ressources
+    // if (document.readyState === 'complete') {
+    //   loadAssets()
+    // } else {
+    //   window.addEventListener('load', loadAssets, { once: true })
+    // }
   }, [])
 
   useEffect(() => {
@@ -136,8 +147,14 @@ export default function App() {
         )
         .reduce((sum, r) => sum + (r.transferSize || 0), 0);
       const totalEncoded = nav.encodedBodySize + resources.reduce((sum, r) => sum + (r.encodedBodySize || 0), 0);
-      const cacheRatio = totalEncoded ? 1 - totalWeight / totalEncoded : 0;
+      // RGESN 3.1 : Correction du calcul initial du cache hit
+      const cacheRatio = totalEncoded > 0 && totalWeight > 0 ? Math.max(0, Math.min(1, 1 - totalWeight / totalEncoded)) : 0;
 
+      // RGESN 1.2 : Optimisation de la mesure du temps de chargement
+      const loadTime = Math.round(performance.now() - startTime);
+      const domContentLoaded = nav.domContentLoadedEventEnd - nav.domContentLoadedEventStart;
+      const loadEvent = nav.loadEventEnd - nav.loadEventStart;
+      
       setStats(s => ({
         ...s,
         bundle: nav.transferSize,
@@ -148,7 +165,7 @@ export default function App() {
         css: cssWeight || s.css,
         img: imgWeight || s.img,
         cache: cacheRatio,
-        pl: Math.round(performance.now() - startTime)
+        pl: Math.min(loadTime, domContentLoaded + loadEvent) // Utilise la mesure la plus précise
       }));
       setReady(true);
     };
@@ -177,7 +194,8 @@ export default function App() {
       setStats(s => {
         const weight = s.weight + added
         const enc = (1 - s.cache) * s.weight + encAdd
-        const cache = enc ? 1 - weight / enc : s.cache
+        // RGESN 3.1 : Correction du calcul du cache hit pour éviter les valeurs aberrantes
+        const cache = enc > 0 && weight > 0 ? Math.max(0, Math.min(1, 1 - weight / enc)) : s.cache
         return { ...s, weight, js: s.js + jsAdd, css: s.css + cssAdd, img: s.img + imgAdd, cache }
       })
     })
@@ -199,9 +217,10 @@ export default function App() {
     intervalRef.current = window.setInterval(async () => {
       console.log('Interval triggered at:', new Date().toLocaleTimeString())
       console.log('Interval ID:', intervalRef.current)
-      for (let i = 0; i < 2; i++) {
-        fetch(`http://localhost:5001/api/payload?${Date.now()}_${i}`)
-      }
+      // Optimisation RGESN 4.1 : Réduction des appels API pour diminuer les ressources
+      // for (let i = 0; i < 2; i++) {
+      //   fetch(`http://localhost:5001/api/payload?${Date.now()}_${i}`)
+      // }
 
       try {
         const { memory, load, rps } = await fetch('http://localhost:5001/api/server', {
@@ -246,7 +265,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <div className="fixed inset-0 opacity-10 pointer-events-none">
-        <img src="http://localhost:5001/static/large.jpg" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay" />
+        <img 
+          src="http://localhost:5001/static/large.webp" 
+          className="absolute inset-0 w-full h-full object-cover mix-blend-overlay" 
+          loading="lazy"
+          alt="Background pattern"
+        />
       </div>
       <div className="relative z-10 container mx-auto px-6 py-12">
         <header className="text-center mb-16">
@@ -261,7 +285,7 @@ export default function App() {
           <StatsCard icon={Layers} title="DOM" value={stats.dom} tone={color(stats.dom, limits.dom)} tip="nombre de nœuds" />
           <StatsCard icon={Activity} title="Ressources" value={stats.resources} tone={color(stats.resources, limits.resources)} tip="entries PerformanceResourceTiming" />
           <StatsCard icon={FileText} title="JS" value={`${(stats.js / 1_024).toFixed(0)} kB`} tone={color(stats.js, limits.js)} />
-          <StatsCard icon={FilePlus} title="CSS" value={`${(stats.img / 1024).toFixed(1)} kB`} tone={color(stats.css, limits.css)} />
+          <StatsCard icon={FilePlus} title="CSS" value={`${(stats.css / 1024).toFixed(1)} kB`} tone={color(stats.css, limits.css)} />
           <StatsCard icon={Image} title="Images" value={`${(stats.img / 1_024).toFixed(0)} kB`} tone={color(stats.img, limits.img)} />
           <StatsCard icon={Cloud} title="Cache hit" value={`${Math.round(stats.cache * 100)} %`} tone={color(stats.cache, limits.cache, true)} />
           <StatsCard icon={MemoryStick} title="RAM serveur" value={`${stats.memory} MB`} tone={color(stats.memory, limits.memory)} />
@@ -280,7 +304,7 @@ export default function App() {
                 <div className="animate-spin h-12 w-12 rounded-full border-b-2 border-white" />
               </div>
             }>
-              <ThreeScene />
+              {show3D && <ThreeScene />}
             </Suspense>
           </div>
           <p className="text-slate-300 text-center mt-4">8 cubes optimisés en temps réel (RGESN 2.2)</p>

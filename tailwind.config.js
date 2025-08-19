@@ -9,23 +9,6 @@ export default {
     extend: {},
   },
   plugins: [],
-  // Optimisation CSS pour production (RGESN 1.3)
-  safelist: [
-    // Classes utilisées dynamiquement
-    {
-      pattern: /^bg-/,
-      variants: ['hover', 'focus', 'active']
-    },
-    {
-      pattern: /^text-/,
-      variants: ['hover', 'focus', 'active']
-    },
-    {
-      pattern: /^border-/,
-      variants: ['hover', 'focus', 'active']
-    },
-    {
-      pattern: /^animate-/
-    }
-  ]
+  // RGESN 1.3 : Optimisation CSS - Suppression du safelist permissif
+  // Seules les classes réellement utilisées seront générées
 };

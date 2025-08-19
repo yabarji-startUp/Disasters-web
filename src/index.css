@@ -1,54 +1,30 @@
-/* Optimisation RGESN 1.3 : Suppression des polices inutilisées */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* RGESN 1.3 : CSS optimisé - Police locale uniquement */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
+/* RGESN 1.3 : Styles de base optimisés */
 * {
-  font-family: 'Inter', 'Poppins', 'Roboto', 'Open Sans', 'Lato', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* RGESN 1.3 : Classes inutiles supprimées pour optimisation */
-
-/* RGESN 1.3 : Animations inutiles supprimées */
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.cpu-waster {
-  animation: waste-cpu 3s infinite ease-in-out;
-}
-
-/* RGESN 1.3 : Règles dupliquées supprimées */
-
 body {
   margin: 0;
-  font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   background-attachment: fixed;
   overflow-x: hidden;
 }
 
+/* RGESN 1.3 : Styles essentiels uniquement */
 .hero-image {
   width: 100%;
   height: auto;
-  max-width: none !important;
   object-fit: cover;
-}
-
-.giant-image {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  margin: 20px 0;
 }
 
 .three-container {
@@ -67,24 +43,4 @@ body {
   color: white;
   padding: 10px;
   border-radius: 5px;
-  animation: pulse 1s infinite;
 }
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-gradient {
-  background-size: 400% 400%;
-  animation: gradient-shift 10s ease infinite;
-}
-
-/* RGESN 1.3 : Styles inutiles supprimés pour optimisation */
