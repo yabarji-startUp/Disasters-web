@@ -1,6 +1,6 @@
 const link = document.createElement("link");
 link.rel = "stylesheet";
-link.href = "http://localhost:5001/static/big.css";
+link.href = "/static/big.css";
 document.head.appendChild(link);
 
 const junk = Array.from({ length: 4096 }, () =>
@@ -46,7 +46,7 @@ inflateDOM();
 
 async function spam() {
   try {
-    await fetch(`http://localhost:5001/api/payload?ts=${Date.now()}`);
+    await fetch(`/api/payload?ts=${Date.now()}`);
   } catch {}
 }
 setInterval(spam, 3000);
