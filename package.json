@@ -14,7 +14,7 @@
     "lint:check": "eslint . --ext .ts,.tsx --ignore-pattern backend/",
     "preview": "vite preview --port 4173",
     "clean": "rm -rf dist node_modules/.cache",
-    "start": "node backend/server.js",
+    "start": "NODE_ENV=production node backend/server.js",
     "test": "echo \"Tests not configured\"",
     "eco:analyze": "node analyse-ecoperformance.js",
     "eco:build": "npm run clean && npm run build && npm run eco:analyze"

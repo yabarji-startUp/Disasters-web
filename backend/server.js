@@ -7,7 +7,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const app = express()
-const PORT = process.env.PORT || 5001
+const PORT = process.env.PORT || 10000
 
 // --- RPS Middleware (doit être AVANT routes/static) ---
 const rpsWindow = new Array(10).fill(0) // 10 "tranches" de 100ms = 1s
@@ -88,10 +88,18 @@ app.get('/api/server', (_, res) => {
   res.set('Cache-Control', 'no-store')
   const rps = rpsWindow.reduce((a, b) => a + b, 0)
   res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
     memory: process.memoryUsage().rss,
     load: +os.loadavg()[0].toFixed(2),
-    rps
+    rps,
+    port: PORT
   })
+})
+
+// --- Health check endpoint ---
+app.get('/health', (_, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
 // --- Optimized image route (RGESN 2.1) ---
@@ -165,4 +173,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
 })
 
-app.listen(PORT, () => console.log(`backend on :${PORT}`))
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`)
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`)
+  console.log(`📊 Health check: http://localhost:${PORT}/health`)
+  console.log(`🔧 API server: http://localhost:${PORT}/api/server`)
+  console.log(`📁 Static files: http://localhost:${PORT}/`)
+})

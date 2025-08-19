@@ -10,5 +10,5 @@ services:
         value: production
       - key: PORT
         value: 10000
-    healthCheckPath: /api/server
+    healthCheckPath: /health
     autoDeploy: false  # Contrôlé par GitHub Actions 
