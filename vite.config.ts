@@ -4,6 +4,12 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // Optimisation RGESN 1.1 : Réduction des ressources en développement
+  server: {
+    hmr: {
+      overlay: false // Désactiver l'overlay HMR pour réduire les ressources
+    }
+  },
   build: {
     // Tree shaking et code splitting (RGESN 1.2)
     rollupOptions: {
