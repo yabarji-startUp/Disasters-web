@@ -120,7 +120,7 @@ jobs:
   eco-performance-check:
     needs: deploy-to-render
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop') && github.event_name == 'push'
     
     steps:
     - name: Checkout code
