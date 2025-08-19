@@ -263,7 +263,7 @@ export default function App() {
     )
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+    <div id="main-content" className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       <div className="fixed inset-0 opacity-10 pointer-events-none">
         <img 
           src="/static/large.webp" 

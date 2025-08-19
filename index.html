@@ -1,13 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Plateforme d'entraînement avancée pour l'optimisation web et l'éco-conception</title>
+    
+    <!-- RGESN 1.3 : Meta tags optimisés -->
+    <meta name="description" content="Plateforme d'entraînement éco-responsable pour l'optimisation web selon les bonnes pratiques RGESN. Optimisez vos performances web et réduisez votre impact environnemental." />
+    <meta name="keywords" content="éco-conception, RGESN, optimisation web, performance, développement durable" />
+    <meta name="author" content="EcoTraining Team" />
+    
+    <!-- RGESN 1.3 : Preload des ressources critiques -->
+    <link rel="preload" href="/src/main.tsx" as="script" type="module" />
+    <link rel="preload" href="/src/index.css" as="style" />
+    
+    <!-- RGESN 2.1 : Favicon optimisé (SVG pour la performance) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    
+    <!-- RGESN 1.3 : CSS optimisé -->
+    <link rel="stylesheet" href="/src/index.css" />
+    
+    <title>EcoTraining Platform - Optimisation Web Éco-responsable</title>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- RGESN 1.3 : Skip link pour l'accessibilité -->
+    <a href="#main-content" class="skip-link" aria-label="Aller au contenu principal">Aller au contenu principal</a>
+    
+    <div id="root" role="main" aria-label="Contenu principal de l'application">
+      <!-- Contenu de l'application React -->
+    </div>
+    
+    <!-- RGESN 1.3 : Script optimisé -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
