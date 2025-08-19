@@ -1,3 +1,11 @@
+---
+marp: true
+theme: yas-eco-red
+paginate: true
+header: "Roadmap Éco-conception Application Zoom"
+footer: "UF Zoom - Plan d'Action 6 Mois"
+---
+
 # 🚀 Roadmap Éco-conception Application Zoom
 ## Version Complète - Tableau Structuré & Visuelle
 
