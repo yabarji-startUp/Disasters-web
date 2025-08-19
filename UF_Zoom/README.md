@@ -11,7 +11,7 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 ## 📁 Structure des Livrables
 
 ### 1. **Cartographie des Contraintes Projet**
-📄 `01-cartographie-contraintes.md`
+📄 `01-cartographie-contraintes-projet.md`
 
 **Contenu :**
 - Contraintes techniques (technologies, performance, sécurité)
@@ -23,8 +23,8 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - Contraintes de marché (concurrence, différenciation)
 - Risques identifiés et plans de mitigation
 
-### 2. **Plan d'Action sur 6 Mois**
-📄 `02-plan-action-6mois.md`
+### 2. **Slides de Plan d'Action sur 6 Mois**
+📄 `02-slides-plan-action-6mois.md`
 
 **Contenu :**
 - Objectifs globaux avec KPIs environnementaux et techniques
@@ -34,8 +34,17 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - Budget total de 300k€ réparti sur 6 mois
 - Processus de suivi et reporting
 
-### 3. **Backlog Complet avec User Stories**
-📄 `03-backlog-user-stories.md`
+### 3. **Fichier Excel d'Analyse EcoIndex**
+📄 `03-analyse-ecoindex.xlsx`
+
+**Contenu :**
+- Analyse détaillée des métriques EcoIndex
+- Comparaison avec les standards RGESN
+- KPIs environnementaux mesurables
+- Recommandations d'optimisation
+
+### 4. **Backlog avec User Stories**
+📄 `04-backlog.md`
 
 **Contenu :**
 - 5 User Stories détaillées (minimum 3 requis)
@@ -49,21 +58,15 @@ Ce dossier contient tous les livrables pour l'exercice pédagogique d'éco-conce
 - Planning des sprints
 - KPIs globaux du backlog
 
-### 4. **Slides de Présentation**
-📄 `04-slides-presentation.md`
+### 5. **Lien vers le Dépôt Git**
+📄 `05-lien-depot-git.md`
 
 **Contenu :**
-- 12 slides de présentation
-- Introduction et contexte
-- Cartographie des contraintes
-- Roadmap 6 mois
-- User Stories prioritaires
-- KPIs et métriques
-- Budget et ROI
-- Processus de suivi
-- Avantages concurrentiels
-- Questions et discussion
-- Contact et ressources
+- URL du dépôt GitHub
+- Structure et organisation
+- Métriques de développement
+- Optimisations éco-conception appliquées
+- Documentation associée
 
 ---
 
