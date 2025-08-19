@@ -1,0 +1,1434 @@
+<!DOCTYPE html><html lang="fr-FR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap');@import '~highlight.js/styles/sunburst';div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#\:\$p > svg > foreignObject > section code.hljs{padding:3px 5px}div#\:\$p > svg > foreignObject > section .hljs{background:#000;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-comment,div#\:\$p > svg > foreignObject > section .hljs-quote{color:#aeaeae;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-keyword,div#\:\$p > svg > foreignObject > section .hljs-selector-tag,div#\:\$p > svg > foreignObject > section .hljs-type{color:#e28964}div#\:\$p > svg > foreignObject > section .hljs-string{color:#65b042}div#\:\$p > svg > foreignObject > section .hljs-subst{color:#daefa3}div#\:\$p > svg > foreignObject > section .hljs-link,div#\:\$p > svg > foreignObject > section .hljs-regexp{color:#e9c062}div#\:\$p > svg > foreignObject > section .hljs-name,div#\:\$p > svg > foreignObject > section .hljs-section,div#\:\$p > svg > foreignObject > section .hljs-tag,div#\:\$p > svg > foreignObject > section .hljs-title{color:#89bdff}div#\:\$p > svg > foreignObject > section .hljs-class .hljs-title,div#\:\$p > svg > foreignObject > section .hljs-doctag,div#\:\$p > svg > foreignObject > section .hljs-title.class_{text-decoration:underline}div#\:\$p > svg > foreignObject > section .hljs-bullet,div#\:\$p > svg > foreignObject > section .hljs-number,div#\:\$p > svg > foreignObject > section .hljs-symbol{color:#3387cc}div#\:\$p > svg > foreignObject > section .hljs-params,div#\:\$p > svg > foreignObject > section .hljs-template-variable,div#\:\$p > svg > foreignObject > section .hljs-variable{color:#3e87e3}div#\:\$p > svg > foreignObject > section .hljs-attribute{color:#cda869}div#\:\$p > svg > foreignObject > section .hljs-meta{color:#8996a8}div#\:\$p > svg > foreignObject > section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-selector-class{color:#9b703f}div#\:\$p > svg > foreignObject > section .hljs-selector-id{color:#8b98ab}div#\:\$p > svg > foreignObject > section .hljs-emphasis{font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-strong{font-weight:700}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){margin:.5em 0 0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:580px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:1.8em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.5em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section p{margin:1em 0 0}div#\:\$p > svg > foreignObject > section ol>li,div#\:\$p > svg > foreignObject > section ul>li{margin:.3em 0 0}div#\:\$p > svg > foreignObject > section ol>li>p,div#\:\$p > svg > foreignObject > section ul>li>p{margin:.6em 0 0}div#\:\$p > svg > foreignObject > section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){display:block;margin:1em 0 0;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{box-sizing:border-box;font-size:.7em;margin:0;min-width:100%;padding:.5em}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div#\:\$p > svg > foreignObject > section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#\:\$p > svg > foreignObject > section blockquote:before{left:0;top:0}div#\:\$p > svg > foreignObject > section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section mark{background:transparent}div#\:\$p > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0;margin:1em 0 0}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-style:solid;border-width:1px;padding:.2em .4em}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:66%;}div#\:\$p > svg > foreignObject > section header{top:0}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{left:0;right:0}div#\:\$p > svg > foreignObject > section footer{bottom:0}div#\:\$p > svg > foreignObject > section{background-color:var(--color-background);background-image:linear-gradient(135deg, hsla(0,0%,53%,0), hsla(0,0%,53%,.02) 50%, hsla(0,0%,100%,0) 0, hsla(0,0%,100%,.05));color:var(--color-foreground);font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;font-size:35px;height:720px;letter-spacing:1.25px;line-height:1.35;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1;}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:35px;}div#\:\$p > svg > foreignObject > section:after{bottom:0;font-size:80%;right:0}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:80%;}div#\:\$p > svg > foreignObject > section a,div#\:\$p > svg > foreignObject > section mark{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section code{background:var(--color-dimmed);color:var(--color-background)}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:var(--color-foreground)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before,div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section section:after{color:var(--color-dimmed)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-color:var(--color-foreground)}div#\:\$p > svg > foreignObject > section table thead th{background:var(--color-foreground);color:var(--color-background)}div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) td,div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe, transparent)}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:where(.invert){--color-background:#455a64;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.lead){align-items:stretch;flex-flow:column nowrap;place-content:safe center center}div#\:\$p > svg > foreignObject > section:where(.lead) :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h6, marp-h6){text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) p{text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h6, marp-h6),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) ol>li>p,div#\:\$p > svg > foreignObject > section:where(.lead) ul>li>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) table{margin-left:auto;margin-right:auto}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > :where(section):not([\20 root]){padding:50px 35px;background-color:#f8f9fa!important;--background-color: #2e7d32;--accent-color: #d5103b;--secondary-color: #4caf50;--text-color: #2c3e50;--light-bg: #e8f5e8;--border-color: #81c784;--red-light: #ffebee;--red-accent: #f44336}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section p, div#\:\$p > svg > foreignObject > section :is(h1, marp-h1), div#\:\$p > svg > foreignObject > section :is(h2, marp-h2), div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){color:var(--text-color)!important;font-family:'Lato', sans-serif;word-wrap:break-word;overflow-wrap:break-word}div#\:\$p > svg > foreignObject > section header{width:100%;height:45px;background-image:linear-gradient(to right, var(--background-color), var(--accent-color));padding:8px 0 8px 15px;font-size:20px;font-weight:600;line-height:28px;color:#fff;z-index:100;border-radius:0 0 8px 8px}div#\:\$p > svg > foreignObject > section footer{width:100%;height:18px;position:absolute;bottom:0px;left:0;background-image:linear-gradient(to right, var(--accent-color), transparent);padding:0 0 0 15px;font-size:11px;line-height:18px;color:#fff;z-index:100}div#\:\$p > svg > foreignObject > section::after{position:absolute;bottom:0;right:15px;color:var(--accent-color);padding:0;height:18px;font-size:14px;line-height:18px}div#\:\$p > svg > foreignObject > section::after{--marpit-root-font-size: 14px;}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){margin:12px 0 10px 0;line-height:1.1;font-size:26px;color:var(--background-color);font-weight:700;word-wrap:break-word;overflow-wrap:break-word}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:20px;color:var(--accent-color);margin:10px 0 8px 0;line-height:1.2}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:16px;color:var(--text-color);margin:8px 0 6px 0;line-height:1.3}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong, div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong, div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong{color:var(--accent-color);font-weight:800}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) code, div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) code{font-size:inherit;font-family:inherit;background-color:var(--accent-color);color:#fff;padding:2px 6px;border-radius:4px}div#\:\$p > svg > foreignObject > section p{margin:8px 0;line-height:1.4;font-size:14px}div#\:\$p > svg > foreignObject > section ul, div#\:\$p > svg > foreignObject > section ol{margin:8px 0;padding-left:20px;line-height:1.4;font-size:14px}div#\:\$p > svg > foreignObject > section li{margin:4px 0;line-height:1.4}div#\:\$p > svg > foreignObject > section blockquote{margin:10px 0;padding:8px 10px;border-left:var(--accent-color) 3px solid;background:var(--red-light);border-radius:0 8px 8px 0;font-style:italic;font-size:13px}div#\:\$p > svg > foreignObject > section blockquote::before, div#\:\$p > svg > foreignObject > section blockquote::after{content:''}div#\:\$p > svg > foreignObject > section.cover{display:flex;flex-flow:column nowrap;justify-content:center;background:linear-gradient(135deg, var(--light-bg) 0%, var(--red-light) 100%);padding:30px 25px}div#\:\$p > svg > foreignObject > section.cover :is(h1, marp-h1), div#\:\$p > svg > foreignObject > section.cover :is(h2, marp-h2), div#\:\$p > svg > foreignObject > section.cover :is(h3, marp-h3), div#\:\$p > svg > foreignObject > section.cover p{text-align:center;color:var(--text-color)}div#\:\$p > svg > foreignObject > section.cover :is(h1, marp-h1){font-size:36px;margin-bottom:15px;color:var(--background-color);text-shadow:1px 1px 2px rgba(0,0,0,0.1);line-height:1.1}div#\:\$p > svg > foreignObject > section.cover :is(h2, marp-h2){font-size:22px;margin-bottom:12px;color:var(--accent-color);line-height:1.2}div#\:\$p > svg > foreignObject > section.cover :is(h3, marp-h3){font-size:16px;margin-bottom:8px;color:var(--text-color);line-height:1.3}div#\:\$p > svg > foreignObject > section.cover :is(h6, marp-h6){line-height:25px}div#\:\$p > svg > foreignObject > section .metric{background:linear-gradient(135deg, var(--light-bg) 0%, var(--red-light) 100%);border:2px solid var(--border-color);border-radius:8px;padding:10px;margin:6px 0;text-align:center}div#\:\$p > svg > foreignObject > section .metric-value{font-size:26px;font-weight:700;color:var(--background-color);margin:4px 0;line-height:1}div#\:\$p > svg > foreignObject > section section.metric-value{--marpit-root-font-size: 26px;}div#\:\$p > svg > foreignObject > section .metric-label{font-size:12px;color:var(--text-color);font-weight:500;line-height:1.2}div#\:\$p > svg > foreignObject > section section.metric-label{--marpit-root-font-size: 12px;}div#\:\$p > svg > foreignObject > section table{width:100%;border-collapse:collapse;margin:8px 0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);font-size:11px}div#\:\$p > svg > foreignObject > section th{background:linear-gradient(135deg, var(--background-color) 0%, var(--accent-color) 100%);color:#fff;padding:6px 8px;text-align:left;font-weight:600;font-size:11px}div#\:\$p > svg > foreignObject > section td{padding:5px 8px;border-bottom:1px solid var(--border-color);font-size:10px;line-height:1.2}div#\:\$p > svg > foreignObject > section tr:nth-child(even){background-color:var(--light-bg)}div#\:\$p > svg > foreignObject > section tr:nth-child(odd){background-color:var(--red-light)}div#\:\$p > svg > foreignObject > section .badge{display:inline-block;padding:2px 6px;border-radius:10px;font-size:10px;font-weight:600;margin:1px}div#\:\$p > svg > foreignObject > section section.badge{--marpit-root-font-size: 10px;}div#\:\$p > svg > foreignObject > section .badge-success{background-color:var(--secondary-color);color:#fff}div#\:\$p > svg > foreignObject > section .badge-warning{background-color:var(--accent-color);color:#fff}div#\:\$p > svg > foreignObject > section .badge-info{background-color:var(--background-color);color:#fff}div#\:\$p > svg > foreignObject > section .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:8px 0}div#\:\$p > svg > foreignObject > section .three-columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:8px 0}div#\:\$p > svg > foreignObject > section .icon{font-size:16px;margin-right:6px;vertical-align:middle}div#\:\$p > svg > foreignObject > section section.icon{--marpit-root-font-size: 16px;}div#\:\$p > svg > foreignObject > section .timeline{position:relative;padding-left:18px}div#\:\$p > svg > foreignObject > section .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, var(--background-color), var(--accent-color))}div#\:\$p > svg > foreignObject > section .timeline-item{position:relative;margin:10px 0;padding-left:12px;font-size:12px;line-height:1.3}div#\:\$p > svg > foreignObject > section section.timeline-item{--marpit-root-font-size: 12px;}div#\:\$p > svg > foreignObject > section .timeline-item::before{content:'';position:absolute;left:-5px;top:5px;width:10px;height:10px;background:linear-gradient(135deg, var(--background-color), var(--accent-color));border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--border-color)}div#\:\$p > svg > foreignObject > section .chart-container{background:#fff;border-radius:6px;padding:10px;margin:8px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1);border:1px solid var(--border-color)}div#\:\$p > svg > foreignObject > section .quote-highlight{background:linear-gradient(135deg, var(--background-color) 0%, var(--accent-color) 100%);color:#fff;padding:12px;border-radius:8px;text-align:center;font-size:16px;font-weight:600;margin:12px 0;box-shadow:0 4px 8px rgba(0,0,0,0.2);line-height:1.3}div#\:\$p > svg > foreignObject > section section.quote-highlight{--marpit-root-font-size: 16px;}div#\:\$p > svg > foreignObject > section .objective{background:var(--light-bg);border-left:4px solid var(--background-color);padding:10px;margin:6px 0;border-radius:0 6px 6px 0;font-size:12px;line-height:1.3}div#\:\$p > svg > foreignObject > section section.objective{--marpit-root-font-size: 12px;}div#\:\$p > svg > foreignObject > section .objective-title{font-weight:700;color:var(--background-color);margin-bottom:5px;font-size:14px}div#\:\$p > svg > foreignObject > section section.objective-title{--marpit-root-font-size: 14px;}div#\:\$p > svg > foreignObject > section .result{background:linear-gradient(135deg, var(--light-bg) 0%, var(--red-light) 100%);border:2px solid var(--accent-color);border-radius:6px;padding:10px;margin:6px 0;text-align:center}div#\:\$p > svg > foreignObject > section .result-value{font-size:20px;font-weight:700;color:var(--accent-color);margin:4px 0;line-height:1.2}div#\:\$p > svg > foreignObject > section section.result-value{--marpit-root-font-size: 20px;}@media (max-width: 1200px){div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:24px}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:18px}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:16px}div#\:\$p > svg > foreignObject > section p{font-size:13px}div#\:\$p > svg > foreignObject > section ul, div#\:\$p > svg > foreignObject > section ol{font-size:13px}div#\:\$p > svg > foreignObject > section .metric-value{font-size:24px}div#\:\$p > svg > foreignObject > section section.metric-value{--marpit-root-font-size: 24px;}div#\:\$p > svg > foreignObject > section .metric-label{font-size:11px}div#\:\$p > svg > foreignObject > section section.metric-label{--marpit-root-font-size: 11px;}}@media (max-width: 768px){div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:20px}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:16px}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:14px}div#\:\$p > svg > foreignObject > section p{font-size:11px}div#\:\$p > svg > foreignObject > section ul, div#\:\$p > svg > foreignObject > section ol{font-size:11px}div#\:\$p > svg > foreignObject > section .two-columns, div#\:\$p > svg > foreignObject > section .three-columns{grid-template-columns:1fr}div#\:\$p > svg > foreignObject > section .metric-value{font-size:20px}div#\:\$p > svg > foreignObject > section section.metric-value{--marpit-root-font-size: 20px;}div#\:\$p > svg > foreignObject > section .metric-label{font-size:10px}div#\:\$p > svg > foreignObject > section section.metric-label{--marpit-root-font-size: 10px;}}div#\:\$p > svg > foreignObject > section .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}div#\:\$p > svg > foreignObject > section .two-columns > div{background:#fff;padding:6px 10px;border-radius:6px}div#\:\$p > svg > foreignObject > section .compact-table{width:100%;border-collapse:collapse;font-size:9px;line-height:1.2}div#\:\$p > svg > foreignObject > section section.compact-table{--marpit-root-font-size: 9px;}div#\:\$p > svg > foreignObject > section .compact-table th, div#\:\$p > svg > foreignObject > section .compact-table td{border:1px solid #ccc;padding:3px 4px;vertical-align:top}div#\:\$p > svg > foreignObject > section .compact-table th{background:#2e7d32;color:#fff;text-align:center}div#\:\$p > svg > foreignObject > section .compact-table .team{background:#d5103b;color:#fff;font-weight:700;text-align:left;width:10%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-class="cover" data-theme="yas-eco-red" lang="fr-FR" class="cover" data-marpit-pagination="1" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--class:cover;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+
+<h1 id="%F0%9F%8C%B1-%C3%A9co-conception-app-zoom"><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> <strong>Éco-conception App Zoom</strong></h1>
+<br />
+<h2 id="cadrage-dun-service-num%C3%A9rique-responsable">Cadrage d'un service numérique responsable</h2>
+<br />
+<h2 id="pr%C3%A9sentation-orale"><strong>Présentation Orale</strong></h2>
+<br />
+<h4 id="unit%C3%A9-fonctionnelle--participer-%C3%A0-une-visioconf%C3%A9rence-avec-zoom"><strong>Unité Fonctionnelle :</strong> Participer à une visioconférence avec Zoom</h4>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="2" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%82-sommaire-%C3%A9co-conception"><img class="emoji" draggable="false" alt="🗂" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5c2.svg" data-marp-twemoji=""/> <strong>Sommaire Éco-conception</strong></h1>
+<br />
+<h2 id="plan-de-la-pr%C3%A9sentation"><strong>Plan de la présentation</strong></h2>
+<br />
+<div class="two-columns">
+<div>
+<h3 id="1%EF%B8%8F%E2%83%A3-introduction--probl%C3%A9matique"><strong><img class="emoji" draggable="false" alt="1️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/31-20e3.svg" data-marp-twemoji=""/> Introduction &amp; Problématique</strong></h3>
+<ul>
+<li>Application Zoom - Éco-conception</li>
+<li>Défi environnemental des visioconférences<br />
+<br /><br /></li>
+</ul>
+<h3 id="2%EF%B8%8F%E2%83%A3-analyse--solution"><strong><img class="emoji" draggable="false" alt="2️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/32-20e3.svg" data-marp-twemoji=""/> Analyse &amp; Solution</strong></h3>
+<ul>
+<li>Analyse de Cycle de Vie (ACV)</li>
+<li>Architecture éco-responsable</li>
+<li>Bonnes pratiques RGESN<br />
+<br /><br /></li>
+</ul>
+<h3 id="3%EF%B8%8F%E2%83%A3-organisation--planning"><strong><img class="emoji" draggable="false" alt="3️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/33-20e3.svg" data-marp-twemoji=""/> Organisation &amp; Planning</strong></h3>
+<ul>
+<li>Structure des équipes (9 équipes)</li>
+<li>Roadmap 6 mois - Development</li>
+<li>Roadmap 6 mois - Marketing</li>
+</ul>
+</div>
+<div>
+<h3 id="4%EF%B8%8F%E2%83%A3-actions--m%C3%A9triques"><strong><img class="emoji" draggable="false" alt="4️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/34-20e3.svg" data-marp-twemoji=""/> Actions &amp; Métriques</strong></h3>
+<ul>
+<li>Actions par équipe - Development</li>
+<li>Actions par équipe - Marketing</li>
+<li>KPIs et métriques environnementaux</li>
+<li>KPIs techniques &amp; business<br />
+<br /><br /></li>
+</ul>
+<h3 id="5%EF%B8%8F%E2%83%A3-budget--coordination"><strong><img class="emoji" draggable="false" alt="5️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/35-20e3.svg" data-marp-twemoji=""/> Budget &amp; Coordination</strong></h3>
+<ul>
+<li>Budget et ROI (340k€)</li>
+<li>Coordination Development &amp; Marketing</li>
+<li>Système de feedback<br />
+<br /><br /></li>
+</ul>
+<h3 id="6%EF%B8%8F%E2%83%A3-objectifs--conclusion"><strong><img class="emoji" draggable="false" alt="6️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/36-20e3.svg" data-marp-twemoji=""/> Objectifs &amp; Conclusion</strong></h3>
+<ul>
+<li>Objectifs &amp; résultats attendus</li>
+<li>Conclusion et prochaines étapes</li>
+<li>Questions &amp; discussion</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="3" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%9A%A8-pourquoi-se-pr%C3%A9occuper-de-l%C3%A9co-conception"><img class="emoji" draggable="false" alt="🚨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6a8.svg" data-marp-twemoji=""/> <strong>Pourquoi se préoccuper de l'éco-conception ?</strong></h1>
+<br />
+<h2 id="impact-environnemental-du-num%C3%A9rique"><strong>Impact environnemental du numérique</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="chiffres-cl%C3%A9s"><strong>Chiffres Clés</strong></h3>
+<ul>
+<li><strong>Le numérique</strong> = ~4% des émissions mondiales de CO₂</li>
+<li><strong>Croissance annuelle</strong> = ~9% de l'impact écologique</li>
+<li><strong>2/3 de l'impact</strong> = fabrication des équipements<br />
+<br /><br /></li>
+</ul>
+<h3 id="opportunit%C3%A9"><strong>Opportunité</strong></h3>
+<blockquote>
+<p>Réduire l'empreinte commence dès la conception.</p>
+</blockquote>
+</div>
+<div>
+<div class="metric">
+<div class="metric-value">4%</div>
+<div class="metric-label">Émissions mondiales CO₂</div>
+</div>
+<br />
+<div class="metric">
+<div class="metric-value">9%</div>
+<div class="metric-label">Croissance annuelle impact</div>
+</div>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="4" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8C%8D-les-grands-principes"><img class="emoji" draggable="false" alt="🌍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f30d.svg" data-marp-twemoji=""/> <strong>Les grands principes</strong></h1>
+<br />
+<h2 id="fondamentaux-de-l%C3%A9co-conception"><strong>Fondamentaux de l'éco-conception</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="principes-cl%C3%A9s"><strong>Principes Clés</strong></h3>
+<ul>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Sobriété fonctionnelle</strong> : Faire moins mais mieux</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Efficacité énergétique</strong> : Optimiser la consommation</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Longévité des équipements</strong> : Prolonger la durée de vie</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Accessibilité et inclusion</strong> : Design universel<br />
+<br /><br /></li>
+</ul>
+<h3 id="philosophie"><strong>Philosophie</strong></h3>
+<blockquote>
+<p>Moins, mieux, plus longtemps.</p>
+</blockquote>
+</div>
+<div>
+<h3 id="application-zoom"><strong>Application Zoom</strong></h3>
+<ul>
+<li><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Interface sobre et épurée</li>
+<li><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Optimisation énergétique &lt; 2.5 kWh/heure</li>
+<li><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Compatibilité anciens terminaux</li>
+<li><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Accessibilité pour tous les utilisateurs</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="5" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%E2%9C%A8-bonnes-pratiques-concr%C3%A8tes"><img class="emoji" draggable="false" alt="✨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2728.svg" data-marp-twemoji=""/> <strong>Bonnes pratiques concrètes</strong></h1>
+<br />
+<h2 id="mise-en-%C5%93uvre-dans-notre-projet-zoom"><strong>Mise en œuvre dans notre projet Zoom</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="optimisations-techniques"><strong>Optimisations Techniques</strong></h3>
+<ul>
+<li><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> <strong>Réduire le poids</strong> des pages &amp; images</li>
+<li><img class="emoji" draggable="false" alt="🔌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50c.svg" data-marp-twemoji=""/> <strong>Minimiser les requêtes</strong> serveur</li>
+<li><img class="emoji" draggable="false" alt="🧹" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9f9.svg" data-marp-twemoji=""/> <strong>Supprimer le superflu</strong> dans le code</li>
+<li><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Favoriser la réutilisation</strong> et la modularité<br />
+<br /><br /></li>
+</ul>
+<h3 id="mesures-et-outils"><strong>Mesures et Outils</strong></h3>
+<ul>
+<li><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> <strong>EcoIndex</strong> : Score environnemental</li>
+<li><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> <strong>GreenIT Analysis</strong> : Audit complet</li>
+<li><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> <strong>Lighthouse</strong> : Performance web</li>
+<li><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>RGESN</strong> : Référentiel français</li>
+</ul>
+</div>
+<div>
+<div class="metric">
+<div class="metric-value">85/100</div>
+<div class="metric-label">Score EcoIndex cible</div>
+</div>
+<br />
+<div class="result">
+<div class="result-value">Objectif atteignable</div>
+<div class="metric-label">Avec nos optimisations</div>
+</div>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="6" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%A7%AD-pour-aller-plus-loin"><img class="emoji" draggable="false" alt="🧭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ed.svg" data-marp-twemoji=""/> <strong>Pour aller plus loin</strong></h1>
+<br />
+<h2 id="ressources-et-r%C3%A9f%C3%A9rences"><strong>Ressources et références</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="%F0%9F%93%9A-ressources-officielles"><strong><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Ressources Officielles</strong></h3>
+<ul>
+<li><a href="https://www.ecoindex.fr"><strong>EcoIndex.fr</strong></a> : Outil de mesure</li>
+<li><a href="https://gr491.isit-europe.org"><strong>GR491</strong></a> : Guide de référence</li>
+<li><strong>Livre :</strong> <em>Eco-conception web</em> (Frédéric Bordage)<br />
+<br /><br /></li>
+</ul>
+<h3 id="%F0%9F%8E%AF-notre-approche"><strong><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Notre Approche</strong></h3>
+<ul>
+<li><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> <strong>Mesure continue</strong> avec EcoIndex</li>
+<li><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Amélioration itérative</strong> basée sur les KPIs</li>
+<li><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> <strong>Formation équipes</strong> aux bonnes pratiques</li>
+<li><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> <strong>Infrastructure verte</strong> 100% renouvelable</li>
+</ul>
+</div>
+<div>
+<div class="quote-highlight">
+"🌟 Chacun de nous peut agir dès aujourd'hui !"
+</div>
+<br />
+<div class="result">
+<div class="result-value">Prêt pour l'éco-conception !</div>
+</div>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-class="cover" data-theme="yas-eco-red" lang="fr-FR" class="cover" data-marpit-pagination="7" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--class:cover;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+
+<h1 id="%F0%9F%8E%AF-probl%C3%A9matique"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>Problématique</strong></h1>
+<h2 id="le-d%C3%A9fi-environnemental-des-visioconf%C3%A9rences"><strong>Le défi environnemental des visioconférences</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="impact-actuel-de-zoom"><strong>Impact actuel de Zoom</strong></h3>
+<ul>
+<li><strong>2.3 kg CO2/jour</strong> par session</li>
+<li><strong>Consommation énergétique élevée</strong></li>
+<li><strong>Bande passante excessive</strong></li>
+<li><strong>Ressources système non optimisées</strong></li>
+</ul>
+</div>
+<div>
+<h3 id="notre-ambition"><strong>Notre ambition</strong></h3>
+<ul>
+<li><strong>Réduction de 30%</strong> de l'empreinte carbone</li>
+<li><strong>Optimisation énergétique</strong> &lt; 2.5 kWh/heure</li>
+<li><strong>Bande passante réduite</strong> de 40%</li>
+<li><strong>Score EcoIndex</strong> &gt; 85/100</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="8" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%93%8A-analyse-de-cycle-de-vie-acv"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> <strong>Analyse de Cycle de Vie (ACV)</strong></h1>
+<br />
+<h2 id="r%C3%A9partition-de-limpact-environnemental"><strong>Répartition de l'impact environnemental</strong></h2>
+<br />
+<div class="chart-container">
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Impact</th>
+<th>Consommation</th>
+<th>Actions principales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conception</strong></td>
+<td>5%</td>
+<td>2 kWh/jour</td>
+<td>Choix technologiques éco-responsables</td>
+</tr>
+<tr>
+<td><strong>Développement</strong></td>
+<td>25%</td>
+<td>15 kWh/jour</td>
+<td>Implémentation des optimisations</td>
+</tr>
+<tr>
+<td><strong>Exploitation</strong></td>
+<td>65%</td>
+<td>50 kWh/jour</td>
+<td>Déploiement sur infrastructure verte</td>
+</tr>
+<tr>
+<td><strong>Fin de vie</strong></td>
+<td>5%</td>
+<td>1 kWh/jour</td>
+<td>Gestion responsable des ressources</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br />
+<div class="metric">
+<div class="metric-value">2.3 kg CO2/jour</div>
+<div class="metric-label">Empreinte carbone totale</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="9" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%9B%A0%EF%B8%8F-solution-propos%C3%A9e"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Solution Proposée</strong></h1>
+<br />
+<h2 id="architecture-%C3%A9co-responsable"><strong>Architecture éco-responsable</strong></h2>
+<br />
+<div class="two-columns">
+<div>
+<h3 id="optimisations-frontend"><strong>Optimisations Frontend</strong></h3>
+<ul>
+<li><strong>Compression des ressources</strong> (gzip/brotli)</li>
+<li><strong>Lazy loading</strong> des composants</li>
+<li><strong>Code splitting</strong> intelligent</li>
+<li><strong>Cache optimisé</strong> (HTTP/Service Worker)<br />
+<br /></li>
+</ul>
+<h3 id="optimisations-backend"><strong>Optimisations Backend</strong></h3>
+<ul>
+<li><strong>API RESTful</strong> optimisées</li>
+<li><strong>Compression vidéo</strong> adaptative</li>
+<li><strong>Cache Redis</strong> pour les données</li>
+<li><strong>CDN</strong> éco-responsable</li>
+</ul>
+</div>
+<div>
+<h3 id="bonnes-pratiques-rgesn"><strong>Bonnes Pratiques RGESN</strong></h3>
+<ul>
+<li><strong>RGESN 1.1</strong> : Optimiser les ressources</li>
+<li><strong>RGESN 1.2</strong> : Optimiser le chargement</li>
+<li><strong>RGESN 2.1</strong> : Optimiser les images/vidéos</li>
+<li><strong>RGESN 3.1</strong> : Optimiser le cache</li>
+<li><strong>RGESN 4.1</strong> : Optimiser les API</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="10" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%BA%EF%B8%8F-structure-des-%C3%A9quipes"><img class="emoji" draggable="false" alt="🗺️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5fa.svg" data-marp-twemoji=""/> <strong>Structure des Équipes</strong></h1>
+<br />
+<h2 id="organisation-par-sp%C3%A9cialit%C3%A9s"><strong>Organisation par spécialités</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-5-%C3%A9quipes"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team (5 équipes)</strong></h3>
+<ul>
+<li><strong>UI/UX Team :</strong> Design sobre, accessibilité, animation</li>
+<li><strong>Frontend Team :</strong> Code interface, optimisation JS, compression</li>
+<li><strong>Backend Team :</strong> Réglages serveur, vidéo/audio, timeout</li>
+<li><strong>Testing Team :</strong> QA, tests de performance, A/B test</li>
+<li><strong>DevOps Team :</strong> Infrastructure, CI/CD, monitoring</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%93%A2-marketing-team-4-%C3%A9quipes"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing Team (4 équipes)</strong></h3>
+<ul>
+<li><strong>KPI &amp; ACV :</strong> Suivi indicateurs, mesure d'impact environnemental</li>
+<li><strong>Content Team :</strong> Communication interne, onboarding, blog</li>
+<li><strong>Growth Team :</strong> Adoption utilisateurs, A/B testing, analytics</li>
+<li><strong>Pilotage projet :</strong> Coordination transverse, planning, restitution</li>
+</ul>
+</div>
+</div>
+<br />
+<div class="metric">
+<div class="metric-value">9 équipes</div>
+<div class="metric-label">Total spécialisées</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="11" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-1---audit--architecture"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 1 - Audit &amp; Architecture</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" data-marp-twemoji=""/> Audit design actuel</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Analyse parcours utilisateur</td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Création guide style éco</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" data-marp-twemoji=""/> Audit bundle JS</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Analyse dépendances</td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Setup compression gzip</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" data-marp-twemoji=""/> Audit infrastructure</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Analyse consommation serveur</td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> Setup monitoring énergie</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" data-marp-twemoji=""/> Audit tests existants</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Setup EcoIndex</td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Création scénarios éco</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Définition KPIs éco</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> Setup dashboard</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Création baseline</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> Communication projet</td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Création documentation</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation équipes</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Alignement objectifs</td>
+<td><img class="emoji" draggable="false" alt="📅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c5.svg" data-marp-twemoji=""/> Planning détaillé</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation PO éco</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="12" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-2---optimisation-frontend"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 2 - Optimisation Frontend</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe-1"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-1"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Design interface sobre</td>
+<td><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Optimisation accessibilité</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Parcours mobile optimisé</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Optimisation bundle JS</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Nettoyage dépendances</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Options par défaut éco</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Optimisation API</td>
+<td><img class="emoji" draggable="false" alt="⏱️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/23f1.svg" data-marp-twemoji=""/> Timeout inactivité</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Monitoring avancé</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests performance éco</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Validation EcoIndex</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Tests utilisateurs</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team-1"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesure impact frontend</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> Dashboard temps réel</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Reporting mensuel</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Documentation technique</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Blog éco-conception</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation utilisateurs</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Review mensuel</td>
+<td><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Ajustements planning</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation continue</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="13" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-3---optimisation-backend"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 3 - Optimisation Backend</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe-2"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-2"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Interface backend admin</td>
+<td><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Accessibilité admin</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Dashboard monitoring</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Lazy loading avancé</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Code splitting</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Cache optimisé</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Microservices green</td>
+<td><img class="emoji" draggable="false" alt="🎬" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ac.svg" data-marp-twemoji=""/> Optimisation vidéo/audio</td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> Hébergement renouvelable</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests charge backend</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Tests EcoIndex backend</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Tests A/B éco</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team-2"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesure impact backend</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> KPIs serveur</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> ACV détaillé</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Documentation backend</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Tutoriels vidéo</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation admin</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mid-term review</td>
+<td><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Ajustements stratégiques</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation PO avancée</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="14" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-4---optimisation-vid%C3%A9o"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 4 - Optimisation Vidéo</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe-3"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-3"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Interface vidéo éco</td>
+<td><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Contrôles vidéo</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Mobile vidéo optimisé</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> WebRTC éco-conçu</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Codecs optimisés</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Qualité adaptative</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Serveurs vidéo éco</td>
+<td><img class="emoji" draggable="false" alt="🎬" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ac.svg" data-marp-twemoji=""/> Codecs H.265/AV1</td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> CDN optimisé</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests vidéo éco</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Tests qualité adaptative</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Tests utilisateurs vidéo</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team-3"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesure impact vidéo</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> KPIs bande passante</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> ACV vidéo</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Documentation vidéo</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Tutoriels qualité</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation vidéo</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Review vidéo</td>
+<td><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Ajustements vidéo</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation vidéo</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="15" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-5---infrastructure-green"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 5 - Infrastructure Green</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe-4"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-4"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Interface monitoring</td>
+<td><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Dashboard éco</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Mobile monitoring</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Service Worker éco</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Cache intelligent</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Offline mode</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Infrastructure green</td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> Hébergement 100% renouvelable</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Monitoring énergie</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests infrastructure</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Tests EcoIndex final</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Tests charge globale</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team-4"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesure impact infrastructure</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> KPIs énergie</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> ACV complet</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Documentation infrastructure</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Guide green hosting</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation monitoring</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Review infrastructure</td>
+<td><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Ajustements finaux</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation finale</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="16" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%97%93%EF%B8%8F-mois-6---tests--optimisation-finale"><img class="emoji" draggable="false" alt="🗓️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f5d3.svg" data-marp-twemoji=""/> <strong>Mois 6 - Tests &amp; Optimisation Finale</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-par-mois-par-%C3%A9quipe-5"><strong>3 éléments par mois par équipe</strong></h2>
+<br />
+<ul>
+      <li>action de mise en œuvre.</li>
+      <li>mesure d'impact (KPI, test, outil…).</li>
+      <li>activité support (formation interne, test QA, communication projet, etc.).</li>
+    </ul>
+    <br />
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-development-team-5"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f6e0.svg" data-marp-twemoji=""/> <strong>Development Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Interface finale</td>
+<td><img class="emoji" draggable="false" alt="♿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/267f.svg" data-marp-twemoji=""/> Tests accessibilité</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Optimisation finale</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/26a1.svg" data-marp-twemoji=""/> Optimisation finale</td>
+<td><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Bundle final</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Performance max</td>
+</tr>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Optimisation finale</td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> Infrastructure optimale</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Monitoring complet</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests finaux</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Validation EcoIndex</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Tests utilisateurs finaux</td>
+</tr>
+</tbody>
+</table>
+<p><br /><br /></p>
+<h3 id="%F0%9F%93%A2-marketing--growth-team-5"><img class="emoji" draggable="false" alt="📢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4e2.svg" data-marp-twemoji=""/> <strong>Marketing &amp; Growth Team</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesure impact final</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> KPIs globaux</td>
+<td><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cb.svg" data-marp-twemoji=""/> ACV final</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4da.svg" data-marp-twemoji=""/> Documentation finale</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Guide complet</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation finale</td>
+</tr>
+<tr>
+<td><strong>Pilotage Projet</strong></td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Review final</td>
+<td><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> Restitution projet</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Formation PO finale</td>
+</tr>
+</tbody>
+</table>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="17" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%93%8A-tableau-r%C3%A9capitulatif-roadmap-6-mois"><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> <strong>Tableau Récapitulatif Roadmap 6 Mois</strong></h1>
+<br />
+<h2 id="vue-densemble-compl%C3%A8te-par-%C3%A9quipe-et-par-mois"><strong>Vue d'ensemble complète par équipe et par mois</strong></h2>
+<div class="chart-container">
+<div class="rm-note">
+Chaque cellule suit le format <span class="pill">Action</span> <span class="pill">Mesure</span> <span class="pill">Support</span>.
+</div>
+<table class="compact-table">
+  <thead>
+    <tr>
+      <th>Équipe</th>
+      <th>M1</th>
+      <th>M2</th>
+      <th>M3</th>
+      <th>M4</th>
+      <th>M5</th>
+      <th>M6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="team">UI/UX</td>
+      <td>Réduction animations<br />Audit poids pages<br />Atelier sobriété</td>
+      <td>Parcours simplifié<br />Test UX allégé<br />Formation design éco</td>
+      <td>Accessibilité anciens<br />Sprint design<br />Workshop accessibilité</td>
+      <td>UI légère mobile<br />Focus utilisateurs<br />Test usagers</td>
+      <td>Menu visio épuré<br />A/B test<br />Formation interface</td>
+      <td>Dashboard suivi usages<br />Démo finale<br />Restitution</td>
+    </tr>
+    <tr>
+      <td class="team">Frontend</td>
+      <td>Compression ressources<br />Audit pages<br />Formation optimisation</td>
+      <td>Nettoyage dépendances<br />Bundle analyzer<br />Code review</td>
+      <td>Compatibilité navigateurs<br />QA spécifique<br />Formation compatibilité</td>
+      <td>Version mobile sobre<br />Perf tests<br />Workshop mobile</td>
+      <td>Caméra off<br />A/B test<br />Formation fonctionnalités</td>
+      <td>CI/CD éco<br />GreenFrame<br />Automatisation</td>
+    </tr>
+    <tr>
+      <td class="team">Backend</td>
+      <td>720p défaut<br />Mesure bande passante<br />Config serveur</td>
+      <td>Réduction appels<br />GTMetrix<br />Optimisation API</td>
+      <td>Timeout inactivité<br />QA<br />Formation timeout</td>
+      <td>Adaptation débit<br />QA réseau<br />Tests réseau</td>
+      <td>Hosting green<br />Atelier hébergeur<br />Migration</td>
+      <td>Indicateurs intégrés<br />CI/CD<br />Monitoring</td>
+    </tr>
+    <tr>
+      <td class="team">Testing</td>
+      <td>QA vidéo<br />Conso Zoom<br />Plan test</td>
+      <td>QA interface<br />Accessibilité<br />Formation QA</td>
+      <td>QA ancien matos<br />Robustesse<br />Test hardware</td>
+      <td>QA mobile<br />Perf test<br />Test mobile</td>
+      <td>A/B caméra<br />Impact<br />Analyse A/B</td>
+      <td>QA dashboard<br />Test usagers<br />Validation finale</td>
+    </tr>
+    <tr>
+      <td class="team">DevOps</td>
+      <td>Monitoring setup<br />Métriques baseline<br />Config outils</td>
+      <td>CI/CD pipeline<br />Temps déploiement<br />Automatisation</td>
+      <td>Scaling infra<br />Perf serveurs<br />Optimisation</td>
+      <td>CDN config<br />Latence<br />Tests réseau</td>
+      <td>Green hosting<br />Impact CO₂<br />Migration</td>
+      <td>Monitoring avancé<br />Alertes<br />Maintenance</td>
+    </tr>
+    <tr>
+      <td class="team">KPI & ACV</td>
+      <td>Indicateurs CO₂<br />Adoption tracking<br />Dashboard</td>
+      <td>Analyse clics sobres<br />Suivi métriques<br />Reporting</td>
+      <td>Estimation CO₂<br />Rapport usage<br />Analyse</td>
+      <td>Taux résolution<br />Stats<br />Revue KPI</td>
+      <td>Données caméra off<br />Revue KPI<br />Analyse</td>
+      <td>Dashboard final<br />Reporting<br />Restitution</td>
+    </tr>
+    <tr>
+      <td class="team">Content</td>
+      <td>Comm usage audio<br />Sensibilisation<br />Guide</td>
+      <td>Onboarding éco<br />Emailing<br />Formation</td>
+      <td>Info-bulle impact<br />Rédaction<br />Doc</td>
+      <td>Article blog<br />Publication<br />Comm externe</td>
+      <td>Comm caméra<br />Tuto<br />Formation avancée</td>
+      <td>Résultats<br />Campagne<br />Diffusion</td>
+    </tr>
+    <tr>
+      <td class="team">Growth</td>
+      <td>Analytics setup<br />Tracking users<br />Config</td>
+      <td>A/B interface<br />Conversion<br />Optimisation</td>
+      <td>Feedback users<br />Satisfaction<br />Analyse</td>
+      <td>Mobile adoption<br />Usage<br />Promotion</td>
+      <td>Adoption features<br />Usage patterns<br />Amélioration</td>
+      <td>Final metrics<br />ROI<br />Reporting</td>
+    </tr>
+    <tr>
+      <td class="team">Pilotage</td>
+      <td>Lancement roadmap<br />Kickoff<br />Coordination</td>
+      <td>Suivi planning<br />Étape<br />Animation</td>
+      <td>Coord tests<br />Formation PO<br />Risques</td>
+      <td>Focus groupe<br />Feedback<br />Ajustements</td>
+      <td>Bilan<br />Ajustements<br />Finalisation</td>
+      <td>Clôture projet<br />Restitution<br />Documentation</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="18" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8E%AF-kpis-et-m%C3%A9triques"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>KPIs et Métriques</strong></h1>
+<br />
+<h2 id="indicateurs-de-performance-environnementaux"><strong>Indicateurs de performance environnementaux</strong></h2>
+<br />
+<div class="three-columns">
+<div class="metric">
+<div class="metric-value">-30%</div>
+<div class="metric-label">Réduction CO2 vs Zoom</div>
+</div>
+<div class="metric">
+<div class="metric-value">&lt; 2.5</div>
+<div class="metric-label">kWh/heure d'utilisation</div>
+</div>
+<div class="metric">
+<div class="metric-value">-40%</div>
+<div class="metric-label">Bande passante utilisée</div>
+</div>
+</div>
+<br />
+<div class="result">
+<div class="result-value">Score EcoIndex : 85/100</div>
+<div class="metric-label">Objectif atteint avec marge</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="19" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8E%AF-kpis-techniques--business"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>KPIs Techniques &amp; Business</strong></h1>
+<br />
+<h2 id="indicateurs-compl%C3%A9mentaires"><strong>Indicateurs complémentaires</strong></h2>
+<br />
+<div class="two-columns">
+<div>
+<h3 id="kpis-techniques"><strong>KPIs Techniques</strong></h3>
+<ul>
+<li><strong>Latence :</strong> &lt; 150ms</li>
+<li><strong>Qualité vidéo :</strong> Adaptative 360p-1080p</li>
+<li><strong>Concurrence :</strong> 100+ participants</li>
+<li><strong>Disponibilité :</strong> 99.9%</li>
+</ul>
+</div>
+<div>
+<h3 id="kpis-business"><strong>KPIs Business</strong></h3>
+<ul>
+<li><strong>ROI environnemental :</strong> Mesurable</li>
+<li><strong>Différenciation :</strong> Avantage éco</li>
+<li><strong>Adoption :</strong> Croissance organique</li>
+<li><strong>Satisfaction :</strong> &gt; 4.5/5</li>
+</ul>
+</div>
+</div>
+<br />
+<div class="metric">
+<div class="metric-value">340k€</div>
+<div class="metric-label">Budget total sur 6 mois</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="20" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%92%B0-budget-et-roi"><img class="emoji" draggable="false" alt="💰" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4b0.svg" data-marp-twemoji=""/> <strong>Budget et ROI</strong></h1>
+<br />
+<h2 id="investissement-responsable"><strong>Investissement responsable</strong></h2>
+<div class="chart-container">
+<table>
+<thead>
+<tr>
+<th>Équipe</th>
+<th>Budget</th>
+<th>% Total</th>
+<th>Responsabilités</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Backend Team</strong></td>
+<td>66k€</td>
+<td>19%</td>
+<td>API, vidéo/audio, hébergement</td>
+</tr>
+<tr>
+<td><strong>Frontend Team</strong></td>
+<td>47k€</td>
+<td>14%</td>
+<td>Optimisation JS, compression</td>
+</tr>
+<tr>
+<td><strong>UI/UX Team</strong></td>
+<td>40k€</td>
+<td>12%</td>
+<td>Design sobre, accessibilité</td>
+</tr>
+<tr>
+<td><strong>Testing Team</strong></td>
+<td>40k€</td>
+<td>12%</td>
+<td>QA, tests performance</td>
+</tr>
+<tr>
+<td><strong>DevOps Team</strong></td>
+<td>45k€</td>
+<td>13%</td>
+<td>Infrastructure, CI/CD</td>
+</tr>
+<tr>
+<td><strong>KPI &amp; ACV</strong></td>
+<td>29k€</td>
+<td>9%</td>
+<td>Métriques environnementales</td>
+</tr>
+<tr>
+<td><strong>Growth Team</strong></td>
+<td>32k€</td>
+<td>9%</td>
+<td>Adoption utilisateurs, analytics</td>
+</tr>
+<tr>
+<td><strong>Content Team</strong></td>
+<td>23k€</td>
+<td>7%</td>
+<td>Communication, documentation</td>
+</tr>
+<tr>
+<td><strong>Pilotage projet</strong></td>
+<td>18k€</td>
+<td>5%</td>
+<td>Coordination, planning</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>340k€</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>Projet complet</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br />
+<h3 id="roi-environnemental"><strong>ROI Environnemental</strong></h3>
+<ul>
+<li><strong>Réduction CO2 :</strong> 30% par heure de visioconférence</li>
+<li><strong>Économies énergétiques :</strong> 40% sur la bande passante</li>
+<li><strong>Impact utilisateur :</strong> 1M utilisateurs = 150 tonnes CO2 économisées/an</li>
+</ul>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="21" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%94%84-coordination-development--marketing"><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Coordination Development &amp; Marketing</strong></h1>
+<br />
+<h2 id="points-de-synchronisation-mensuels"><strong>Points de Synchronisation Mensuels</strong></h2>
+<div class="chart-container">
+<table>
+<thead>
+<tr>
+<th>Mois</th>
+<th>Development</th>
+<th>Marketing</th>
+<th>Coordination</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M1</strong></td>
+<td><img class="emoji" draggable="false" alt="🏗️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3d7.svg" data-marp-twemoji=""/> Architecture validée</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> KPIs définis</td>
+<td><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> Alignement objectifs</td>
+</tr>
+<tr>
+<td><strong>M2</strong></td>
+<td><img class="emoji" draggable="false" alt="🎨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a8.svg" data-marp-twemoji=""/> Interface optimisée</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Onboarding prêt</td>
+<td><img class="emoji" draggable="false" alt="👥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f465.svg" data-marp-twemoji=""/> Test utilisateurs</td>
+</tr>
+<tr>
+<td><strong>M3</strong></td>
+<td><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" data-marp-twemoji=""/> Backend optimisé</td>
+<td><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Documentation</td>
+<td><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Mesures alignées</td>
+</tr>
+<tr>
+<td><strong>M4</strong></td>
+<td><img class="emoji" draggable="false" alt="🎬" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3ac.svg" data-marp-twemoji=""/> Vidéo optimisée</td>
+<td><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Communication mobile</td>
+<td><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4c8.svg" data-marp-twemoji=""/> Adoption mesurée</td>
+</tr>
+<tr>
+<td><strong>M5</strong></td>
+<td><img class="emoji" draggable="false" alt="🌱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f331.svg" data-marp-twemoji=""/> Infrastructure green</td>
+<td><img class="emoji" draggable="false" alt="🎥" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3a5.svg" data-marp-twemoji=""/> Tutoriels créés</td>
+<td><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Tests A/B coordonnés</td>
+</tr>
+<tr>
+<td><strong>M6</strong></td>
+<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2705.svg" data-marp-twemoji=""/> Optimisation finale</td>
+<td><img class="emoji" draggable="false" alt="🎉" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f389.svg" data-marp-twemoji=""/> Communication résultats</td>
+<td><img class="emoji" draggable="false" alt="🏆" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3c6.svg" data-marp-twemoji=""/> Validation globale</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br />
+<h3 id="r%C3%A9unions-hebdomadaires"><strong>Réunions Hebdomadaires</strong></h3>
+<ul>
+<li><strong>Lundi :</strong> Review KPIs environnementaux par équipe</li>
+<li><strong>Mercredi :</strong> Review KPIs techniques et performance</li>
+<li><strong>Vendredi :</strong> Planning actions suivantes et coordination</li>
+</ul>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="22" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8E%AF-bonnes-pratiques-rgesn"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>Bonnes Pratiques RGESN</strong></h1>
+<br />
+<h2 id="application-concr%C3%A8te-par-phase"><strong>Application concrète par phase</strong></h2>
+<br />
+<div class="two-columns">
+<div>
+<h3 id="rgesn-1--optimiser-les-requ%C3%AAtes-http"><strong>RGESN #1 : Optimiser les requêtes HTTP</strong></h3>
+<ul>
+<li><strong>M1 :</strong> Compression ressources, réduction appels serveurs</li>
+<li><strong>M2 :</strong> Nettoyage dépendances, optimisation API</li>
+<li><strong>M3 :</strong> Timeout inactivité, compatibilité navigateurs<br />
+<br /><br /></li>
+</ul>
+<h3 id="rgesn-2--optimiser-les-images-et-vid%C3%A9os"><strong>RGESN #2 : Optimiser les images et vidéos</strong></h3>
+<ul>
+<li><strong>M1 :</strong> Forcer 720p par défaut, compression ressources</li>
+<li><strong>M2 :</strong> Adaptation débit vidéo, optimisation interface</li>
+<li><strong>M3 :</strong> QA résolution vidéo, tests performance</li>
+</ul>
+</div>
+<div>
+<h3 id="rgesn-3--optimiser-lutilisation-du-cpu"><strong>RGESN #3 : Optimiser l'utilisation du CPU</strong></h3>
+<ul>
+<li><strong>M1 :</strong> Réduction animations lourdes, compression</li>
+<li><strong>M2 :</strong> Parcours simplifié, allègement interface</li>
+<li><strong>M3 :</strong> Compatibilité anciens terminaux, timeout<br />
+<br /><br /></li>
+</ul>
+<h3 id="rgesn-4--optimiser-le-cache"><strong>RGESN #4 : Optimiser le cache</strong></h3>
+<ul>
+<li><strong>M4 :</strong> Cache HTTP optimisé, Service Worker</li>
+<li><strong>M5 :</strong> Cache Redis, CDN configuration</li>
+<li><strong>M6 :</strong> Monitoring cache hit, optimisation continue</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="23" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%94%84-syst%C3%A8me-de-feedback"><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Système de Feedback</strong></h1>
+<br />
+<h2 id="monitoring-et-am%C3%A9lioration-continue"><strong>Monitoring et amélioration continue</strong></h2>
+<br />
+<div class="two-columns">
+<div>
+<h3 id="m%C3%A9triques-techniques"><strong>Métriques Techniques</strong></h3>
+<ul>
+<li><strong>Performance :</strong> Temps de chargement, bande passante</li>
+<li><strong>Ressources :</strong> CPU, RAM, GPU utilisation</li>
+<li><strong>Qualité :</strong> Score EcoIndex, métriques RGESN<br />
+<br /><br /></li>
+</ul>
+<h3 id="m%C3%A9triques-business"><strong>Métriques Business</strong></h3>
+<ul>
+<li><strong>Adoption :</strong> Taux d'utilisation des fonctionnalités</li>
+<li><strong>Satisfaction :</strong> Feedback utilisateurs</li>
+<li><strong>Impact :</strong> Réduction CO2 mesurée</li>
+</ul>
+</div>
+<div>
+<h3 id="m%C3%A9canismes-de-feedback"><strong>Mécanismes de Feedback</strong></h3>
+<ul>
+<li><strong>Dashboard temps réel</strong> pour les équipes</li>
+<li><strong>Alertes automatiques</strong> sur les seuils</li>
+<li><strong>Rapports mensuels</strong> d'impact environnemental</li>
+<li><strong>Ajustements itératifs</strong> basés sur les données</li>
+</ul>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="24" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8E%AF-objectifs--r%C3%A9sultats-attendus"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>Objectifs &amp; Résultats Attendus</strong></h1>
+<br />
+<h2 id="impact-environnemental-mesurable"><strong>Impact environnemental mesurable</strong></h2>
+<div class="quote-highlight">
+"Réduire l'empreinte carbone des visioconférences de 30% tout en maintenant une expérience utilisateur optimale"
+</div>
+<div class="three-columns">
+<div class="objective">
+<div class="objective-title">Réduction CO2</div>
+-30% vs Zoom actuel
+</div>
+<div class="objective">
+<div class="objective-title">Efficacité énergétique</div>
+&lt; 2.5 kWh/heure
+</div>
+<div class="objective">
+<div class="objective-title">Score environnemental</div>
+A+ (85/100 EcoIndex)
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="25" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%8E%AF-r%C3%A9sum%C3%A9-des-actions-par-mois"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f3af.svg" data-marp-twemoji=""/> <strong>Résumé des Actions par Mois</strong></h1>
+<h2 id="3-%C3%A9l%C3%A9ments-minimum-par-mois-par-%C3%A9quipe"><strong>3 éléments minimum par mois par équipe</strong></h2>
+<div class="chart-container">
+<table>
+<thead>
+<tr>
+<th>Mois</th>
+<th>Action de mise en œuvre</th>
+<th>Mesure d'impact</th>
+<th>Activité support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M1</strong></td>
+<td>Audit complet système</td>
+<td>Setup EcoIndex</td>
+<td>Formation équipes</td>
+</tr>
+<tr>
+<td><strong>M2</strong></td>
+<td>Optimisation frontend</td>
+<td>Dashboard temps réel</td>
+<td>Documentation technique</td>
+</tr>
+<tr>
+<td><strong>M3</strong></td>
+<td>Optimisation backend</td>
+<td>KPIs serveur</td>
+<td>Formation admin</td>
+</tr>
+<tr>
+<td><strong>M4</strong></td>
+<td>Optimisation vidéo</td>
+<td>KPIs bande passante</td>
+<td>Formation vidéo</td>
+</tr>
+<tr>
+<td><strong>M5</strong></td>
+<td>Infrastructure green</td>
+<td>KPIs énergie</td>
+<td>Formation monitoring</td>
+</tr>
+<tr>
+<td><strong>M6</strong></td>
+<td>Tests &amp; optimisation finale</td>
+<td>Validation EcoIndex</td>
+<td>Formation finale</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br />
+<div class="three-columns">
+<div class="metric">
+<div class="metric-value">18+ actions</div>
+<div class="metric-label">Actions de mise en œuvre</div>
+</div>
+<div class="metric">
+<div class="metric-value">18+ mesures</div>
+<div class="metric-label">Mesures d'impact</div>
+</div>
+<div class="metric">
+<div class="metric-value">18+ activités</div>
+<div class="metric-label">Activités support</div>
+</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="26" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%9A%80-objectifs-atteints"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" data-marp-twemoji=""/> <strong>Objectifs Atteints</strong></h1>
+<br />
+<h2 id="roadmap-compl%C3%A8te-et-r%C3%A9aliste"><strong>Roadmap complète et réaliste</strong></h2>
+<div class="quote-highlight">
+"Réduction de 30% de l'empreinte carbone vs Zoom actuel avec une roadmap structurée sur 6 mois"
+</div>
+<div class="three-columns">
+<div class="objective">
+<div class="objective-title">Actions Mise en Œuvre</div>
+- Audit complet système
+- Optimisation frontend/backend
+- Infrastructure green
+- Tests et validation
+</div>
+<div class="objective">
+<div class="objective-title">Mesures d'Impact</div>
+- EcoIndex monitoring
+- KPIs temps réel
+- ACV détaillé
+- Validation finale
+</div>
+<div class="objective">
+<div class="objective-title">Activités Support</div>
+- Formation continue
+- Documentation complète
+- Communication projet
+- Coordination transverse
+</div>
+</div>
+<br />
+<div class="result">
+<div class="result-value">Prêt pour le développement responsable !</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-theme="yas-eco-red" lang="fr-FR" data-marpit-pagination="27" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+<h1 id="%F0%9F%9A%80-conclusion"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f680.svg" data-marp-twemoji=""/> <strong>Conclusion</strong></h1>
+<br />
+<h2 id="valeur-ajout%C3%A9e-et-prochaines-%C3%A9tapes"><strong>Valeur ajoutée et prochaines étapes</strong></h2>
+<div class="two-columns">
+<div>
+<h3 id="valeur-ajout%C3%A9e"><strong>Valeur ajoutée</strong></h3>
+<ul>
+<li><strong>Impact environnemental</strong> mesurable et significatif</li>
+<li><strong>Expérience utilisateur</strong> préservée voire améliorée</li>
+<li><strong>Modèle économique</strong> viable et durable</li>
+<li><strong>Réplicabilité</strong> sur d'autres services numériques<br />
+<br /><br /></li>
+</ul>
+<h3 id="innovation"><strong>Innovation</strong></h3>
+<ul>
+<li><strong>Première application</strong> de RGESN à grande échelle</li>
+<li><strong>Méthodologie</strong> reproductible pour l'éco-conception</li>
+<li><strong>Benchmark</strong> pour l'industrie des visioconférences</li>
+</ul>
+</div>
+<div>
+<h3 id="prochaines-%C3%A9tapes"><strong>Prochaines étapes</strong></h3>
+<ul>
+<li><strong>Validation technique</strong> des optimisations</li>
+<li><strong>Tests utilisateurs</strong> sur prototypes</li>
+<li><strong>Partnerships</strong> avec hébergeurs verts</li>
+<li><strong>Déploiement progressif</strong> avec monitoring</li>
+</ul>
+</div>
+</div>
+<br />
+<div class="result">
+<div class="result-value">Prêt pour le développement responsable !</div>
+</div>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-header="Présentation Orale - Éco-conception UF Zoom" data-footer="UF Zoom - Plan d Action 6 Mois" data-class="cover" data-theme="yas-eco-red" lang="fr-FR" class="cover" data-marpit-pagination="28" style="--paginate:true;--header:Présentation Orale - Éco-conception UF Zoom;--footer:UF Zoom - Plan d Action 6 Mois;--class:cover;--theme:yas-eco-red;" data-marpit-pagination-total="28">
+<header>Présentation Orale - Éco-conception UF Zoom</header>
+
+<h1 id="%F0%9F%99%8F-questions--discussion"><img class="emoji" draggable="false" alt="🙏" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f64f.svg" data-marp-twemoji=""/> <strong>Questions &amp; Discussion</strong></h1>
+<h2 id="merci-pour-votre-attention"><strong>Merci pour votre attention</strong></h2>
+<h3 id="contact--ressources"><strong>Contact &amp; Ressources</strong></h3>
+<p><br /><br /><br />
+<br /><br /></p>
+<ul>
+<li><strong>Dépôt Git :</strong> <a href="https://github.com/yabarji-startUp/Disasters-web/">Lien vers le projet</a></li>
+<li><strong>Documentation complète :</strong> UF_Zoom/</li>
+<li><strong>Métriques détaillées :</strong> Fichiers Excel ACV</li>
+</ul>
+<footer>UF Zoom - Plan d Action 6 Mois</footer>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.0.2/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter((function(e){return e!==t}))},c=function(e,t){return(a[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach((function(e){e(u)})),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach((e=>e.classList.add(`${u}slide`))),e.on("activate",(t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),x(e,!0)})),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)}))})),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",(({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}})),e.on("prev",(({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())}))},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout((()=>{r.add(_),o()}),e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},O=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}}))},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",(e=>e.style.display="none")),h||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>x(t,!1))),e.on("marp-inactive",(()=>x(t,!0))),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",L()&&S())))))}},D=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}}))};var N,B,q,K,j,F,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,(function(e){return"&"+K[e]+";"}))},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},j="dangerouslySetInnerHTML",F={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==j&&(r+=" "+(F[a]?F[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[j])r+=t[j].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",(()=>{t=!0,r(J.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(J.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(J.nextContainer).addEventListener("click",(()=>e.next()));const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",(()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const i=document.querySelectorAll(".bespoke-marp-note");i.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(J.noteWrapper).appendChild(e)})),e.on("activate",(()=>i.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),l()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&l(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),v({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a((e=>({reference:(e.reference||0)+1})))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout((()=>{e.on("fragment",(e=>{r&&a((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}}));const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",s),i()})),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?a(e[0]):void 0}),ce),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then((e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(de.set(e,t),t))),be=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>ye(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then((e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach((e=>i.sheet?.insertRule(e)));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}})),!1)};e.on("prev",r((t=>e.prev({...t,[$e]:!0})),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r((t=>e.next({...t,[$e]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[$e]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex((e=>g()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>
