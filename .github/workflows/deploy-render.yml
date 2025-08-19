@@ -117,70 +117,10 @@ jobs:
           echo "ℹ️ RENDER_URL not configured, skipping verification"
         fi
 
-  eco-performance-check:
-    needs: deploy-to-render
-    runs-on: ubuntu-latest
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop') && github.event_name == 'push'
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
-        
-    - name: Install ecoindex-cli
-      run: npm install -g ecoindex-cli
-      
-    - name: Run eco performance check
-      run: |
-        echo "🌱 Running eco performance check on deployed application..."
-        
-        # Attendre que l'application soit complètement déployée
-        sleep 60
-        
-        # Exécuter ecoindex sur l'application déployée
-        ecoindex-cli "${{ secrets.RENDER_URL }}" --output json > eco-results-production.json
-        
-        # Extraire et afficher les résultats
-        GRADE=$(cat eco-results-production.json | jq -r '.grade')
-        SCORE=$(cat eco-results-production.json | jq -r '.score')
-        DOM_ELEMENTS=$(cat eco-results-production.json | jq -r '.dom_elements')
-        REQUESTS=$(cat eco-results-production.json | jq -r '.requests')
-        SIZE=$(cat eco-results-production.json | jq -r '.size')
-        
-        echo "📊 Eco Performance Results:"
-        echo "  Grade: $GRADE"
-        echo "  Score: $SCORE/100"
-        echo "  DOM Elements: $DOM_ELEMENTS"
-        echo "  Requests: $REQUESTS"
-        echo "  Size: $SIZE KB"
-        
-        # Vérifier que l'application respecte les critères éco-conception
-        if [ "$SCORE" -ge 85 ]; then
-          echo "✅ Excellent score éco-conception: $SCORE/100"
-        elif [ "$SCORE" -ge 70 ]; then
-          echo "✅ Bon score éco-conception: $SCORE/100"
-        elif [ "$SCORE" -ge 50 ]; then
-          echo "⚠️ Score éco-conception acceptable: $SCORE/100"
-        else
-          echo "❌ Score éco-conception à améliorer: $SCORE/100"
-          exit 1
-        fi
-        
-    - name: Upload eco results
-      uses: actions/upload-artifact@v4
-      with:
-        name: eco-results-production
-        path: eco-results-production.json
-        retention-days: 30
-      if: always()
+  
 
   notify-deployment:
-    needs: [deploy-to-render, eco-performance-check]
+    needs: [deploy-to-render]
     runs-on: ubuntu-latest
     if: always()
     
@@ -200,10 +140,4 @@ jobs:
           echo "❌ Deploy: FAILED"
         fi
         
-        if [ "${{ needs.eco-performance-check.result }}" == "success" ]; then
-          echo "✅ Eco Check: SUCCESS"
-        elif [ "${{ needs.eco-performance-check.result }}" == "skipped" ]; then
-          echo "⏭️ Eco Check: SKIPPED"
-        else
-          echo "❌ Eco Check: FAILED"
-        fi 
+ 

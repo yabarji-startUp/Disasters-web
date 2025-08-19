@@ -152,6 +152,8 @@ app.get('/api/data', (req, res) => {
   res.json(compressedData)
 })
 
+
+
 // --- SPA fallback route (serve index.html for all non-API routes) ---
 app.get('*', (req, res) => {
   // Skip API routes
