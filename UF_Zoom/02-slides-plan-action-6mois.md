@@ -7,7 +7,14 @@ footer: 'UF Zoom - Plan d Action 6 Mois'
 
 ---
 
-<!-- _class: cover -->
+<!--
+_class: cover 
+_paginate: skip
+_color: #fff
+-->
+
+![bg](https://picsum.photos/1200/720?image=24)
+
 
 # 🌱 **Éco-conception App Zoom**
 <br>
@@ -1082,13 +1089,15 @@ A+ (85/100 EcoIndex)
 
 <!-- _class: cover -->
 
+<br><br><br><br><br><br>
+
 # 🙏 **Questions & Discussion**
 
 ## **Merci pour votre attention**
 
 ### **Contact & Ressources**
-<br><br>
-<br><br>
+
+<br><br><br><br><br><br><br><br><br><br>
 
 - **Dépôt Git :** [Lien vers le projet](https://github.com/yabarji-startUp/Disasters-web/)
 - **Documentation complète :** UF_Zoom/
